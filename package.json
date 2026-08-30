@@ -9,5 +9,5 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present"
   },
-  "engines": {"node": ">=22"}
+  "engines": {"node": "22.x"}
 }
