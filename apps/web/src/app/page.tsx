@@ -14,7 +14,7 @@ export default function Home() {
           <Image src="/assets/gameplay/hero-hexgrid-planetary-warfront.png" alt="" fill priority sizes="(max-width: 760px) 100vw, 1200px" />
         </div>
         <div className="hero-copy">
-          <p className="kicker">DETERMINISTIC AXIAL COMBAT</p>
+          <p className="kicker">DETERMINISTIC SPHERICAL COMBAT</p>
           <h1>COMMAND<br /><span>THE CURVE.</span></h1>
           <p className="hero-lede">Issue the order. Read the field. Break the machine intelligence waiting on the far side of every hexagon.</p>
           <div className="hero-actions">
@@ -26,11 +26,11 @@ export default function Home() {
         <div className="telemetry" aria-hidden="true"><span>LAT 00.000</span><span>ARC 06</span><span>SIGNAL 98%</span></div>
       </section>
       <section className="mission-strip" aria-label="First operation sequence">
-        <article><span>01</span><h2>DECIDE</h2><p>Select a droid and stack up to three legal commands.</p></article>
+        <article><span>01</span><h2>DECIDE</h2><p>Select a droid and stack up to four legal commands.</p></article>
         <article><span>02</span><h2>COMMIT</h2><p>End the turn. Your ordered set resolves before the baseline response.</p></article>
         <article><span>03</span><h2>ADAPT</h2><p>Capture the relay. Guard the line. Destroy the opposition.</p></article>
       </section>
-      <footer className="site-footer"><span>SMASHDROIDS.COM / LIVE BUILD</span><span>AXIAL-HEX-V1 · ABI 1</span></footer>
+      <footer className="site-footer"><span>SMASHDROIDS.COM / LIVE BUILD</span><span>SPHEREFALL-OP1-V1 · ABI 2</span></footer>
     </main>
   );
 }

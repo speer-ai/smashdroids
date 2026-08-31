@@ -217,11 +217,42 @@ function rejection(state: SpherefallState, side: Side, unitId: string, reason: s
   return Object.freeze({ type: "rejected", side, unitId, reason, round: state.round });
 }
 
-export function projectSpherefallCommands(input: SpherefallState, commands: readonly SpherefallCommand[], side: Side): Readonly<{ state: SpherefallState; events: readonly SpherefallEvent[] }> {
+function parseCommand(value: unknown): SpherefallCommand | null {
+  if (!value || typeof value !== "object") return null;
+  const command = value as Record<string, unknown>;
+  const unitId = typeof command.unitId === "string" && command.unitId.length > 0 ? command.unitId : null;
+  if (command.type === "deploy") {
+    return typeof command.troopId === "string" && troopById.has(command.troopId as TroopId) && typeof command.to === "string" && topologyById.has(command.to as TileId)
+      ? { type: "deploy", troopId: command.troopId as TroopId, to: command.to as TileId }
+      : null;
+  }
+  if (!unitId) return null;
+  if (command.type === "move") return typeof command.to === "string" && topologyById.has(command.to as TileId) ? { type: "move", unitId, to: command.to as TileId } : null;
+  if (command.type === "guard" || command.type === "capture" || command.type === "radar") return { type: command.type, unitId };
+  if (command.type === "attack") return typeof command.targetId === "string" && command.targetId.length > 0 ? { type: "attack", unitId, targetId: command.targetId } : null;
+  return null;
+}
+
+export function projectSpherefallCommands(input: SpherefallState, commands: unknown, side: Side): Readonly<{ state: SpherefallState; events: readonly SpherefallEvent[] }> {
   let state = input;
   const events: SpherefallEvent[] = [];
   const movedDistance = new Map<string, number>();
-  for (const command of commands) {
+  const commandList: readonly unknown[] = Array.isArray(commands) ? commands : [commands];
+  for (const [index, rawCommand] of commandList.entries()) {
+    let fallbackId = `${side}-command-${index + 1}`;
+    if (rawCommand && typeof rawCommand === "object") {
+      const candidateUnitId = (rawCommand as Record<string, unknown>).unitId;
+      if (typeof candidateUnitId === "string" && candidateUnitId.length > 0) fallbackId = candidateUnitId;
+    }
+    if (index >= SPHEREFALL_RULESET.commandPoints) {
+      events.push(rejection(state, side, fallbackId, "command-limit-exceeded"));
+      continue;
+    }
+    const command = parseCommand(rawCommand);
+    if (!command) {
+      events.push(rejection(state, side, fallbackId, "invalid-command"));
+      continue;
+    }
     if (command.type === "deploy") {
       const troop = troopById.get(command.troopId)!;
       const activeCount = state.units.filter((unit) => unit.side === side && unit.hp > 0).length;
@@ -255,7 +286,7 @@ export function projectSpherefallCommands(input: SpherefallState, commands: read
       }
       const units = state.units.map((unit) => unit.id === actor.id ? Object.freeze({ ...unit, tileId: option.tileId, guarded: false }) : unit);
       state = freezeWithUnits(state, units);
-      movedDistance.set(actor.id, option.path.length - 1);
+      movedDistance.set(actor.id, (movedDistance.get(actor.id) ?? 0) + option.path.length - 1);
       events.push(Object.freeze({ type: "move", side, unitId: actor.id, from: actor.tileId, to: option.tileId, path: option.path, cost: option.cost, round: state.round }));
       continue;
     }
@@ -359,41 +390,58 @@ export function projectSpherefallCommands(input: SpherefallState, commands: read
   return Object.freeze({ state, events: Object.freeze(events) });
 }
 
+function chooseBaselineAiCommand(state: SpherefallState, unitId: string): SpherefallCommand | null {
+  const unit = state.units.find((candidate) => candidate.id === unitId && candidate.side === "ai" && candidate.hp > 0);
+  if (!unit) return null;
+  const objective = state.objectives.find((candidate) => candidate.tileId === unit.tileId && candidate.controller !== "ai");
+  if (objective) return { type: "capture", unitId: unit.id };
+  const troop = troopById.get(unit.troopId)!;
+  const weapon = weaponById.get(troop.weaponId)!;
+  const target = state.units
+    .filter((candidate) => candidate.side === "player" && candidate.hp > 0)
+    .filter((candidate) => {
+      const distance = tileDistance(unit.tileId, candidate.tileId);
+      return distance >= weapon.minRange && distance <= weapon.maxRange;
+    })
+    .sort((left, right) => left.hp - right.hp || left.id.localeCompare(right.id))[0];
+  if (target) return { type: "attack", unitId: unit.id, targetId: target.id };
+  const strategicTargets = [
+    ...state.objectives.filter((candidate) => candidate.controller !== "ai").map((candidate) => candidate.tileId),
+    ...state.units.filter((candidate) => candidate.side === "player" && candidate.hp > 0).map((candidate) => candidate.tileId),
+  ];
+  const move = [...legalMoveOptions(state, unit.id)]
+    .sort((left, right) => {
+      const leftDistance = Math.min(...strategicTargets.map((tileId) => tileDistance(left.tileId, tileId)));
+      const rightDistance = Math.min(...strategicTargets.map((tileId) => tileDistance(right.tileId, tileId)));
+      return leftDistance - rightDistance || left.cost - right.cost || left.tileId.localeCompare(right.tileId);
+    })[0];
+  return move ? { type: "move", unitId: unit.id, to: move.tileId } : { type: "guard", unitId: unit.id };
+}
+
 function baselineAiCommands(state: SpherefallState): SpherefallCommand[] {
   const commands: SpherefallCommand[] = [];
-  for (const unit of state.units.filter((candidate) => candidate.side === "ai" && candidate.hp > 0).sort((left, right) => left.id.localeCompare(right.id))) {
+  let projected = spherefallObservation(state, "ai");
+  const unitIds = projected.units.filter((candidate) => candidate.side === "ai" && candidate.hp > 0).map((unit) => unit.id).sort();
+  for (const unitId of unitIds) {
     if (commands.length >= SPHEREFALL_RULESET.commandPoints) break;
-    const objective = state.objectives.find((candidate) => candidate.tileId === unit.tileId && candidate.controller !== "ai");
-    if (objective) {
-      commands.push({ type: "capture", unitId: unit.id });
-      continue;
-    }
-    const troop = troopById.get(unit.troopId)!;
-    const weapon = weaponById.get(troop.weaponId)!;
-    const target = state.units
-      .filter((candidate) => candidate.side === "player" && candidate.hp > 0)
-      .filter((candidate) => {
-        const distance = tileDistance(unit.tileId, candidate.tileId);
-        return distance >= weapon.minRange && distance <= weapon.maxRange;
-      })
-      .sort((left, right) => left.hp - right.hp || left.id.localeCompare(right.id))[0];
-    if (target) {
-      commands.push({ type: "attack", unitId: unit.id, targetId: target.id });
-      continue;
-    }
-    const strategicTargets = [
-      ...state.objectives.filter((candidate) => candidate.controller !== "ai").map((candidate) => candidate.tileId),
-      ...state.units.filter((candidate) => candidate.side === "player" && candidate.hp > 0).map((candidate) => candidate.tileId),
-    ];
-    const move = [...legalMoveOptions(state, unit.id)]
-      .sort((left, right) => {
-        const leftDistance = Math.min(...strategicTargets.map((tileId) => tileDistance(left.tileId, tileId)));
-        const rightDistance = Math.min(...strategicTargets.map((tileId) => tileDistance(right.tileId, tileId)));
-        return leftDistance - rightDistance || left.cost - right.cost || left.tileId.localeCompare(right.tileId);
-      })[0];
-    commands.push(move ? { type: "move", unitId: unit.id, to: move.tileId } : { type: "guard", unitId: unit.id });
+    const command = chooseBaselineAiCommand(projected, unitId);
+    if (!command) continue;
+    commands.push(command);
+    projected = projectSpherefallCommands(projected, [command], "ai").state;
   }
   return commands;
+}
+
+export function expireTemporaryEffects(beforePhase: SpherefallState, afterPhase: SpherefallState): SpherefallState {
+  const beforeById = new Map(beforePhase.units.map((unit) => [unit.id, unit]));
+  const units = afterPhase.units.map((unit) => {
+    const before = beforeById.get(unit.id);
+    if (!before) return unit;
+    const guarded = before.guarded ? false : unit.guarded;
+    const jammed = before.jammed ? false : unit.jammed;
+    return guarded === unit.guarded && jammed === unit.jammed ? unit : Object.freeze({ ...unit, guarded, jammed });
+  });
+  return freezeWithUnits(afterPhase, units);
 }
 
 function winnerAfterScoring(state: SpherefallState): Side | "draw" | null {
@@ -415,21 +463,22 @@ function winnerAfterScoring(state: SpherefallState): Side | "draw" | null {
 
 export function resolveSpherefallRound(input: SpherefallState, playerCommands: readonly SpherefallCommand[]): Readonly<{ state: SpherefallState; events: readonly SpherefallEvent[] }> {
   if (input.winner) return Object.freeze({ state: input, events: Object.freeze([]) });
-  const player = projectSpherefallCommands(input, playerCommands.slice(0, SPHEREFALL_RULESET.commandPoints), "player");
-  const ai = projectSpherefallCommands(player.state, baselineAiCommands(player.state), "ai");
-  const scoreFor = (side: Side) => ai.state.objectives.reduce((score, objective) => score + (objective.controller === side ? objective.kind === "prime-relay" ? 2 : objective.kind === "uplink" ? 1 : 0 : 0), 0);
+  const player = projectSpherefallCommands(input, playerCommands, "player");
+  const afterPlayer = expireTemporaryEffects(input, player.state);
+  const ai = projectSpherefallCommands(afterPlayer, baselineAiCommands(afterPlayer), "ai");
+  const afterAi = expireTemporaryEffects(afterPlayer, ai.state);
+  const scoreFor = (side: Side) => afterAi.objectives.reduce((score, objective) => score + (objective.controller === side ? objective.kind === "prime-relay" ? 2 : objective.kind === "uplink" ? 1 : 0 : 0), 0);
   const incomeFor = (side: Side) => 2 + scoreFor(side);
   const supply = Object.freeze({
-    player: Math.min(12, ai.state.supply.player + incomeFor("player")),
-    ai: Math.min(12, ai.state.supply.ai + incomeFor("ai")),
+    player: Math.min(12, afterAi.supply.player + incomeFor("player")),
+    ai: Math.min(12, afterAi.supply.ai + incomeFor("ai")),
   });
   const victoryPoints = Object.freeze({
-    player: ai.state.victoryPoints.player + scoreFor("player"),
-    ai: ai.state.victoryPoints.ai + scoreFor("ai"),
+    player: afterAi.victoryPoints.player + scoreFor("player"),
+    ai: afterAi.victoryPoints.ai + scoreFor("ai"),
   });
-  const units = Object.freeze(ai.state.units.map((unit) => unit.guarded || unit.jammed ? Object.freeze({ ...unit, guarded: false, jammed: false }) : unit));
   const revealedTiles = Object.freeze({ player: Object.freeze([]) as readonly TileId[], ai: Object.freeze([]) as readonly TileId[] });
-  const scored = Object.freeze({ ...ai.state, supply, victoryPoints, units, revealedTiles });
+  const scored = Object.freeze({ ...afterAi, supply, victoryPoints, revealedTiles });
   const state = Object.freeze({ ...scored, round: Math.min(SPHEREFALL_RULESET.roundLimit, scored.round + 1), winner: winnerAfterScoring(scored) });
   return Object.freeze({ state, events: Object.freeze([...player.events, ...ai.events]) });
 }

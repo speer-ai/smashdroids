@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { SPHERE_TOPOLOGY } from "../world/sphere";
 import { TROOPS } from "./catalog";
-import { createSpherefallState, legalMoveOptions, projectSpherefallCommands, resolveSpherefallRound, spherefallObservation } from "./spherefall";
+import { createSpherefallState, expireTemporaryEffects, legalMoveOptions, projectSpherefallCommands, resolveSpherefallRound, spherefallObservation } from "./spherefall";
 import { shortestTilePath } from "./world";
 
 describe("Spherefall deterministic reducer", () => {
@@ -52,7 +52,9 @@ describe("Spherefall deterministic reducer", () => {
     const second = resolveSpherefallRound(state, commands);
     expect(first).toEqual(second);
     expect(first.state.round).toBe(2);
-    expect(first.events.filter((event) => event.side === "player")).toHaveLength(4);
+    const playerEvents = first.events.filter((event) => event.side === "player");
+    expect(playerEvents.filter((event) => event.type !== "rejected")).toHaveLength(4);
+    expect(playerEvents.filter((event) => event.reason === "command-limit-exceeded")).toHaveLength(4);
     expect(first.state.supply.player).toBeGreaterThanOrEqual(2);
     expect(Object.isFrozen(first.state)).toBe(true);
   });
@@ -96,5 +98,64 @@ describe("Spherefall deterministic reducer", () => {
     const authoritative = projectSpherefallCommands(hidden, [{ type: "move", unitId: "p-striker", to: target }], "player");
     expect(authoritative.events[0]).toMatchObject({ type: "rejected", reason: "illegal-move" });
     expect(authoritative.state.units[0]!.tileId).toBe(from);
+  });
+
+  it("accumulates Striker Momentum across multiple moves in one command set", () => {
+    const base = createSpherefallState({ playerClanId: "solandinos", aiClanId: "germanoids" });
+    const world = Object.freeze({ ...base.world, tiles: Object.freeze(base.world.tiles.map((tile) => Object.freeze({ ...tile, terrainId: "plains" as const }))) });
+    const path = shortestTilePath(world, world.tiles[0]!.id, world.tiles.find((tile) => shortestTilePath(world, world.tiles[0]!.id, tile.id).length === 4)!.id);
+    const units = (strikerTile: typeof path[number]) => Object.freeze([
+      Object.freeze({ id: "p-striker", side: "player" as const, troopId: "striker" as const, tileId: strikerTile, hp: 8, guarded: false, jammed: false }),
+      Object.freeze({ id: "a-scout", side: "ai" as const, troopId: "scout" as const, tileId: path[3]!, hp: 6, guarded: false, jammed: false }),
+    ]);
+    const moving = Object.freeze({ ...base, world, units: units(path[0]!) });
+    const moved = projectSpherefallCommands(moving, [
+      { type: "move", unitId: "p-striker", to: path[1]! },
+      { type: "move", unitId: "p-striker", to: path[2]! },
+      { type: "attack", unitId: "p-striker", targetId: "a-scout" },
+    ], "player");
+    const stationary = projectSpherefallCommands(Object.freeze({ ...base, world, units: units(path[2]!) }), [{ type: "attack", unitId: "p-striker", targetId: "a-scout" }], "player");
+    expect(moved.events[2]).toMatchObject({ type: "attack", damage: (stationary.events[0]?.damage ?? 0) + 1 });
+  });
+
+  it("expires pre-existing temporary effects while preserving effects created during the phase", () => {
+    const base = createSpherefallState({ playerClanId: "neo-romans", aiClanId: "zoryani" });
+    const before = Object.freeze({ ...base, units: Object.freeze([
+      Object.freeze({ ...base.units[0]!, guarded: true, jammed: true }),
+      Object.freeze({ ...base.units[6]!, guarded: false, jammed: false }),
+    ]) });
+    const after = Object.freeze({ ...before, units: Object.freeze([
+      before.units[0]!,
+      Object.freeze({ ...before.units[1]!, guarded: true, jammed: true }),
+    ]) });
+    const expired = expireTemporaryEffects(before, after);
+    expect(expired.units[0]).toMatchObject({ guarded: false, jammed: false });
+    expect(expired.units[1]).toMatchObject({ guarded: true, jammed: true });
+  });
+
+  it("plans each AI command against the projected intermediate state", () => {
+    const base = createSpherefallState({ playerClanId: "neo-romans", aiClanId: "germanoids" });
+    const target = base.world.tiles[0]!.id;
+    const attackers = SPHERE_TOPOLOGY.tiles.find((tile) => tile.id === target)!.neighbors.slice(0, 2);
+    const world = Object.freeze({ ...base.world, tiles: Object.freeze(base.world.tiles.map((tile) => Object.freeze({ ...tile, terrainId: "plains" as const }))) });
+    const state = Object.freeze({ ...base, world, units: Object.freeze([
+      Object.freeze({ id: "p-scout", side: "player" as const, troopId: "scout" as const, tileId: target, hp: 1, guarded: false, jammed: false }),
+      Object.freeze({ id: "a-striker-1", side: "ai" as const, troopId: "striker" as const, tileId: attackers[0]!, hp: 8, guarded: false, jammed: false }),
+      Object.freeze({ id: "a-striker-2", side: "ai" as const, troopId: "striker" as const, tileId: attackers[1]!, hp: 8, guarded: false, jammed: false }),
+    ]) });
+    const resolved = resolveSpherefallRound(state, []);
+    expect(resolved.events.filter((event) => event.side === "ai" && event.type === "attack" && event.targetId === "p-scout")).toHaveLength(1);
+    expect(resolved.events.filter((event) => event.side === "ai" && event.type === "rejected")).toHaveLength(0);
+  });
+
+  it("rejects malformed and over-limit commands at the shared reducer boundary", () => {
+    const state = createSpherefallState({ playerClanId: "xiren", aiClanId: "zoryani" });
+    const actor = state.units.find((unit) => unit.side === "player")!;
+    const malformed = projectSpherefallCommands(state, [{ type: "deploy", troopId: "bogus", to: "bogus" }] as never, "player");
+    expect(malformed.events[0]).toMatchObject({ type: "rejected", reason: "invalid-command" });
+    expect(projectSpherefallCommands(state, null as never, "player").events[0]).toMatchObject({ type: "rejected", reason: "invalid-command" });
+    const overflow = projectSpherefallCommands(state, Array.from({ length: 5 }, () => ({ type: "guard", unitId: actor.id })), "player");
+    expect(overflow.events).toHaveLength(5);
+    expect(overflow.events[4]).toMatchObject({ type: "rejected", reason: "command-limit-exceeded" });
   });
 });
