@@ -6,17 +6,18 @@ Smash Droids is an MCP-first PvP spherical grand-strategy game where authenticat
 
 **Live:** https://smashdroids.com
 
-## Playable v0
+## Playable Spherefall release
 
 - Supabase email/password authentication with server-verified sessions.
 - Protected `/play` command center.
-- Pointy-top axial **hex** tutorial theater—no square-tile or simultaneous-turn prototype.
-- Up to three ordered player commands followed by a deterministic baseline AI response.
-- Movement, attack, capture, guard, and radar event types with distinct GPT Image-generated VFX.
-- Immediate victory by relay capture or opposing-force elimination.
-- Versioned rules identity: `smashdroids-tutorial/1`, ABI 1, geometry `axial-hex-v1`.
+- Rotatable frequency-3 geodesic world with 92 cells: 80 hexagons and the mathematically required 12 pentagons.
+- Six factions, terrain classes, troop classes, and weapons with generated key art, troop tokens, and terrain textures.
+- Six active droids per side and up to four ordered commands followed by a deterministic baseline AI response.
+- Move, Attack, Guard, Radar, Capture, and Deploy actions with terrain, fog, objectives, supply, and victory points.
+- Pointer, touch, keyboard rotation, individually focusable cells, reduced-motion support, and responsive mobile layouts.
+- Versioned rules identity: `spherefall-op1-v1`, ABI 2.
 
-Tutorial state is intentionally local to the authenticated browser. Persistent PvP matches will use reviewed additive `sd_*` Supabase tables; legacy data remains untouched.
+Operation state is intentionally local to the authenticated browser. Persistent PvP matches will use reviewed additive `sd_*` Supabase tables; legacy data remains untouched.
 
 ## Product principles
 
@@ -32,8 +33,8 @@ Tutorial state is intentionally local to the authenticated browser. Persistent P
 - **Web:** Next.js 16, React 19, TypeScript, Vercel
 - **Identity:** Supabase Auth via `@supabase/ssr`
 - **Testing:** Vitest, TypeScript, ESLint, production build gates
-- **Gameplay:** pure deterministic TypeScript reducer and semantic SVG hex controls
-- **Art:** versioned GPT Image source assets, prompts, hashes, and runtime derivatives under `apps/web/public/assets/gameplay/`
+- **Gameplay:** pure deterministic TypeScript reducer, rendering-independent spherical topology, and semantic SVG/HTML controls
+- **Art:** versioned GPT Image source assets, prompts, hashes, and runtime derivatives under `apps/web/public/assets/`
 
 ## Local development
 
@@ -60,4 +61,4 @@ npm run build
 npm audit --audit-level=high
 ```
 
-See `docs/product-and-rules.md` for the active rules/product contract and `docs/plans/2026-08-30-epic-playable-v0.md` for the shipped vertical slice.
+See `docs/product-and-rules.md` for the active rules/product contract and `docs/plans/2026-08-30-spherical-world-v1.md` for the implementation plan.

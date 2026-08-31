@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { TutorialBattle } from "../../components/tutorial-battle";
+import { SpherefallBattle } from "../../components/spherefall-battle";
 import { createClient } from "../../lib/supabase/server";
 import { signOut } from "../login/actions";
 
@@ -19,7 +19,7 @@ export default async function Play() {
         <p><span /> LIVE OPERATION / PILOT {user.email?.split("@")[0]?.toUpperCase()}</p>
         <form action={signOut}><button className="text-button">SIGN OUT ↗</button></form>
       </header>
-      <TutorialBattle />
+      <SpherefallBattle />
     </main>
   );
 }

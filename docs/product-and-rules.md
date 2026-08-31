@@ -1,75 +1,78 @@
-# Smash Droids V0 Product and Rules Contract
+# Smash Droids Spherefall Product and Rules Contract
 
 ## Player promise
 
-Build a civilization, command an AI war cabinet, and conquer a spherical world with no edge. Players authenticate, field built-in or external AI agents, and watch every accepted or rejected order resolve through a deterministic event stream.
+Command one of six machine factions across a rotatable spherical world with no board edge. Every accepted or rejected order resolves through the bounded deterministic `spherefall-op1-v1` reducer.
+
+## Canonical faction names
+
+Primary player-facing names always appear first; lore subtitles remain secondary:
+
+- **Neo Romans** — Aureate Cohort
+- **Germanoids** — Forgewood Union
+- **XiRen** — Celestial Weave
+- **Hoshikage** — Folded Circuit
+- **Solandinos** — Sunriver Concord
+- **Zoryani** — Aurora Foundry
 
 ## World and geometry
 
-- The player-facing world is spherical and uses **hexagonal tiles**. Squares and octagonal display plates are obsolete.
-- Terrain, territory, settlements, headquarters, combined arms, fog, radar/SIGINT, and orbiting satellites expand from the v0 tutorial slice.
-- Geometry identity is versioned. A geometry change is a hard replay/model compatibility boundary.
-- A mathematically closed sphere cannot contain only perfect regular hexagons; the production world artifact must explicitly encode unavoidable defect cells or seam topology rather than disguising squares as hexes.
+- The canonical world is a frequency-3 subdivided-icosahedron dual containing exactly 92 playable cells.
+- It contains 80 hexagons and the mathematically required 12 pentagonal defects; the product never claims an impossible all-hex closed sphere.
+- Canonical tile IDs, centers, ordered corners, adjacency, edges, and faces are independent from rendering.
+- Movement, attacks, objectives, radar, and pathfinding cross projected seams naturally because legality uses canonical topology rather than screen position.
+- Six terrain classes are authored: Abyssal Ocean, Signal Plains, Circuit Forest, Glass Desert, Crown Highlands, and Aurora Tundra.
+
+## Operation ruleset
+
+The playable release uses `spherefall-op1-v1`, ABI 2, catalog digest `f0e2e7ae27da7e54b722e9bbe7519a8c113b85a2b17cdccccb53ee39b4db6c6a`:
+
+- Six active droids per side: Striker, Bulwark, Lancer, Artillery, Scout, and Hacker.
+- Four command points per side and a maximum of ten rounds.
+- Ordered commands resolve sequentially against each intermediate state.
+- Actions are Move, Attack, Guard, Radar, Capture, and Deploy.
+- Combat is deterministic: weapon power, armor piercing, armor, Guard, terrain cover, formation cover, and faction modifiers determine damage without random rolls.
+- Terrain affects movement, concealment, line of sight, sensors, and long-range power.
+- Supply funds reinforcements beside a controlled headquarters, up to the six-unit active cap.
+- Uplinks and the Prime Relay generate supply and victory points.
+- Victory occurs by force elimination, reaching the VP threshold, or leading when the tenth round resolves; exact ties draw.
+
+## Troop mechanics
+
+- **Striker — Momentum:** +1 power after moving at least two cells in the projected command set.
+- **Bulwark — Anchor:** Guard grants +2 armor and one point of adjacent formation cover.
+- **Lancer — Braced Shot:** +1 power when firing without moving that turn.
+- **Artillery — Indirect Fire:** Arc Mortar ignores Highlands line-of-sight blocking and applies armor-reduced friendly-fire splash.
+- **Scout — Wide Sweep:** Radar reaches radius four before terrain and faction modifiers.
+- **Hacker — Rapid Override:** the only class that may Move then Capture in one ordered command set; Disruptor hits jam surviving targets.
 
 ## Sequential turn loop
 
-1. The server identifies one active player/seat.
-2. That player's AI receives a private turn-start observation and legal-action contract.
-3. The AI submits an ordered, bounded command set.
-4. Commands resolve one at a time against each intermediate state; invalid commands emit immutable rejection events.
-5. Terminal victory stops the remaining command set immediately.
-6. Control rotates to the next living player.
+1. The active player receives a private observation and legal-action contract.
+2. The player returns an ordered command set bounded to four commands.
+3. Commands resolve one at a time; invalid commands emit immutable rejection events.
+4. The deterministic AI selects a bounded, stably sorted response against the projected intermediate state.
+5. Economy, scoring, temporary Guard/jam state, visibility, round progression, and terminal victory resolve through the same reducer.
 
-This is Polytopia-style sequential play—not simultaneous bundle resolution. Response speed never changes the deterministic order within an accepted command set.
+Planning and final resolution use identical reducer semantics. Rendering never invents state transitions.
 
-## Playable tutorial ruleset
+## Interaction and accessibility
 
-The deployed first slice uses `smashdroids-tutorial/1`, ABI 1, geometry `axial-hex-v1`:
+- The globe supports pointer drag, touch drag, arrow-key rotation, keyboard zoom, and Home reset.
+- Selection, movement legality, ownership, and unavailable states use shape, markers, text, or stroke treatment in addition to color.
+- Controls maintain 44×44 CSS-pixel targets where applicable.
+- Mobile layouts avoid horizontal overflow and preserve the complete globe.
+- Non-trivial motion respects `prefers-reduced-motion`.
+- Live command and event regions expose updates to assistive technology.
 
-- Pointy-top axial hex theater, radius 3.
-- Three droids per side: striker, bulwark, scout.
-- Player submits up to three ordered commands, then the deterministic baseline AI responds.
-- Actions: adjacent `move`, adjacent `attack`, `capture`, `guard`, and `radar`.
-- Capturing the relay or eliminating the opposing force wins immediately.
-- Every resolution emits a typed event used by the UI's action-specific animation.
+## Generated art provenance
 
-Tutorial match state is local to the authenticated browser in this release. Persistent PvP matches require the reviewed namespaced Supabase schema before launch.
-
-## Agent modes
-
-- Free deterministic baseline AI.
-- Server-side built-in OpenAI agent; provider credentials remain server-only.
-- Bring-your-own agents over authenticated MCP/HTTP. Inference runs in the player's environment by default.
-- No user provider keys are stored in v0.
-
-## Canonical provenance
-
-Every persistent match and replay must carry ruleset ID, ABI, digest, geometry, state schema, action vocabulary, seed, and engine version. Store private observations, ordered commands, accepted/rejected outcomes, compact public events, model/agent metadata, latency, fallbacks, and final replay/state digests under strict visibility rules.
-
-## MCP contract
-
-Minimum tools remain:
-
-- `smashdroids.create_agent`
-- `smashdroids.join_match`
-- `smashdroids.get_observation`
-- `smashdroids.get_legal_actions`
-- `smashdroids.submit_turn`
-- `smashdroids.get_match_status`
-- `smashdroids.forfeit`
-
-Every mutation is authenticated, idempotent, rate-limited, and scoped to one player's seat. One-time MCP credentials are stored only as hashes.
-
-## Visual contract
-
-- GPT Image-generated art is versioned with source prompts, source outputs, derivatives, and hashes.
-- Movement, attack, capture, guard, radar/recon, construction, and other resolved actions use distinct visual language.
-- Procedural timing is driven by authoritative events; visuals never invent state transitions.
-- Non-trivial motion has a reduced-motion equivalent.
+Faction key art, troop sheets, troop-token derivatives, terrain atlas, and terrain derivatives retain prompts, generation configuration, dimensions, SHA-256 hashes, source/derivative relationships, and OpenAI `gpt-image-2` provenance. Credentials remain server/tool-side and never enter browser code, Git, or manifests.
 
 ## Security and data
 
 - Supabase browser access uses only the public URL and publishable key protected by RLS.
 - Service-role and provider credentials never enter browser bundles or Git.
-- New persistence uses additive `sd_*` tables and preserves all legacy data.
-- Existing legacy tables are not modified without ownership review.
+- New persistence must use additive `sd_*` tables and preserve all legacy data.
+- Existing legacy tables remain untouched without ownership review.
+- Match state remains local to the authenticated browser in this release; persistent multiplayer requires a separately reviewed namespaced schema.

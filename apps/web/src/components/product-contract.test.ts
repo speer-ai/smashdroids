@@ -1,58 +1,62 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+
 const root = resolve(import.meta.dirname, "../..");
 const read = (path: string) => readFileSync(resolve(root, path), "utf8");
 
-describe("play-now onboarding product contract", () => {
-  it("routes PLAY NOW through authentication and accessible command onboarding", () => {
+describe("Spherefall product contract", () => {
+  it("routes PLAY NOW through authentication and two-step onboarding", () => {
     const landing = read("src/app/page.tsx");
     const login = read("src/app/login/page.tsx");
     const onboarding = read("src/components/command-onboarding.tsx");
-    const battle = read("src/components/tutorial-battle.tsx");
     expect(landing).toContain("PLAY NOW");
     expect(landing).toContain("/login?next=/onboarding");
     expect(login).toContain('"/onboarding"');
-    expect(onboarding).toContain("<fieldset");
-    expect(onboarding).toContain("<legend");
+    expect(onboarding).not.toMatch(/instinct|doctrine-fieldset|doctrine-grid/i);
+    expect(onboarding).toContain("step {step + 1} of 2");
     expect(onboarding).toContain('aria-describedby="callsign-help"');
     expect(onboarding).toContain('role="status"');
+    expect(onboarding).toContain("ROTATABLE GEODESIC WORLD");
+    expect(onboarding).toContain("Stack up to four orders");
     expect(onboarding).toContain("/play");
-    expect(battle).toContain("projectCommands(state, commands");
-    expect(battle).toContain("events.map((event, index)");
-    expect(battle).toContain('role="toolbar"');
-    expect(battle).not.toContain('role="gridcell"');
-    expect(onboarding).toContain('aria-current={item === step ? "step" : undefined}');
-    expect(onboarding).toContain('if (step === 0) callsignInput.current?.focus()');
-    expect(onboarding).toContain('else heading.current?.focus()');
     expect(read("src/app/onboarding/actions.ts")).toContain('store.set("sd_onboarded_user", user.id');
     expect(read("src/app/play/page.tsx")).toContain('store.get("sd_onboarded_user")?.value !== user.id');
-    expect(`${landing}\n${login}\n${onboarding}\n${battle}`).not.toMatch(/tutorial system online|initiate tutorial|live tactical tutorial|live tutorial/i);
   });
-  it("uses authoritative per-event VFX and a mobile-fit battlefield", () => {
-    const battle = read("src/components/tutorial-battle.tsx");
-    const css = read("src/app/globals.css");
-    const proxy = read("src/proxy.ts");
-    expect(proxy).toContain("applyPrivateAuthCachePolicy(response)");
-    expect(battle).toContain("events.map((event, index)");
-    expect(battle).toContain("style={effectStyle(event, index)}");
-    expect(battle).toContain("--move-angle");
-    expect(css).toContain("width:max(13.5%,44px)");
-    expect(css).toContain(".hex-tile.legal:not(.selected)");
-    expect(css).toContain(".hex-tile.unavailable{cursor:not-allowed");
-    expect(css).toContain(".hex-tile.unavailable:hover");
-    expect(css).toContain(".event-stream li");
-    expect(css).toContain(".nav-link,.text-button{justify-self:end;min-width:44px;min-height:44px");
-    expect(css).toContain(".wordmark{min-height:44px");
-    expect(css).toContain("font:12px/1.4 var(--mono)");
-    expect(css).not.toContain("transform:scale(.74)");
+
+  it("serves the spherical battle instead of the retired flat surface", () => {
+    const page = read("src/app/play/page.tsx");
+    const battle = read("src/components/spherefall-battle.tsx");
+    expect(page).toContain("SpherefallBattle");
+    expect(page).not.toContain("TutorialBattle");
+    expect(battle).toContain("projectGlobeTiles");
+    expect(battle).toContain("SPHERE_TOPOLOGY");
+    expect(battle).toContain("onPointerMove");
+    expect(battle).toContain("rotateWithKeyboard");
+    expect(battle).toContain('aria-label="Rotatable spherical battlefield"');
+    expect(battle).toContain('role="region"');
+    expect(battle).not.toContain('role="application"');
+    expect(battle).toContain("globe-focus-tile");
+    expect(battle).toContain("aria-label={tileLabel");
+    expect(battle).toContain("observedUnits");
+    expect(battle).toContain("spherefallObservation");
+    expect(battle).toContain("projectSpherefallCommands(planningState");
+    expect(battle).toContain('new Set(game ? visibleTileIds(game, "player") : [])');
+    expect(battle).not.toContain('visibleTileIds(view, "player")');
+    expect(battle).not.toMatch(/tutorial|prototype|demo/i);
   });
-  it("ships generated VFX with reduced motion and truthful provenance", () => {
+
+  it("ships responsive, non-color-only, reduced-motion globe controls", () => {
     const css = read("src/app/globals.css");
-    for (const effect of ["movement", "attack", "capture", "guard", "radar"]) expect(css).toContain(`effect-${effect}-gpt.png`);
+    const battle = read("src/components/spherefall-battle.tsx");
+    expect(css).toContain(".spherefall-globe");
+    expect(css).toContain(".sphere-tile.is-legal");
+    expect(css).toContain("@media(max-width:1050px)");
+    expect(css).toContain("@media(max-width:780px)");
+    expect(css).toContain("@media(max-width:520px)");
     expect(css).toContain("prefers-reduced-motion");
-    const manifest = JSON.parse(read("public/assets/gameplay/manifest.json"));
-    expect(manifest.generator).toBe("ChatGPT GPT Image");
-    expect(manifest.assets).toHaveLength(7);
+    expect(battle).toContain("is-selected");
+    expect(battle).toContain("is-legal");
+    expect(battle).toContain('aria-live="polite"');
   });
 });

@@ -1,0 +1,951 @@
+{
+  "schemaVersion": "smash-droids.token-manifest.v1",
+  "campaignId": "spherical-world-v1",
+  "sourceManifest": "assets/factions/manifest.json",
+  "roles": [
+    "scout",
+    "line",
+    "striker",
+    "heavy",
+    "support",
+    "commander"
+  ],
+  "assets": [
+    {
+      "assetId": "sd-neo-romans-scout-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "scout",
+      "file": "assets/factions/tokens/neo-romans/scout.png",
+      "sha256": "9bcc452747069e9f45fb1a3a15d89e8fc115c9acea2f79a70684a37e173943be",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        33,
+        54,
+        299,
+        463
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-neo-romans-line-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "line",
+      "file": "assets/factions/tokens/neo-romans/line.png",
+      "sha256": "b7207d102e9f51498dc8fbf52c20875aa5426d009f1e95e5cc014f082e296580",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        365,
+        14,
+        647,
+        468
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-neo-romans-striker-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "striker",
+      "file": "assets/factions/tokens/neo-romans/striker.png",
+      "sha256": "894461010d19aec9af1e729fe666297caae09f3086f45e6cd37cec5edc8d8f32",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        689,
+        45,
+        1007,
+        473
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-neo-romans-heavy-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "heavy",
+      "file": "assets/factions/tokens/neo-romans/heavy.png",
+      "sha256": "eb8eea56dc80c335b16b046db1531643c8bdeebee67cc3a5149f451eea818127",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        16,
+        526,
+        399,
+        996
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-neo-romans-support-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "support",
+      "file": "assets/factions/tokens/neo-romans/support.png",
+      "sha256": "d208b5f1f5d31c994d2bfded4a59dc05de46f59057a30ef0736021f02a0a1ad7",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        402,
+        495,
+        684,
+        995
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-neo-romans-commander-token-v1",
+      "clanId": "neo-romans",
+      "clanName": "Neo Romans",
+      "role": "commander",
+      "file": "assets/factions/tokens/neo-romans/commander.png",
+      "sha256": "06d721778b9eef4e809e30915fad2f9878024a28768f944997f346b5b2eb42aa",
+      "parentFile": "assets/factions/neo-romans-troop-sheet-gpt.png",
+      "parentSha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        648,
+        446,
+        1010,
+        1009
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-scout-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "scout",
+      "file": "assets/factions/tokens/germanoids/scout.png",
+      "sha256": "d2a0fbc4011941a0c4f054ee8df123085b15d71ccdc8ad963ff621c241b40af9",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        27,
+        96,
+        325,
+        454
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-line-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "line",
+      "file": "assets/factions/tokens/germanoids/line.png",
+      "sha256": "9ed93b4d8fc788262d90fa658720f4a94e51335676199ed45df94d18a9077465",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        344,
+        13,
+        660,
+        457
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-striker-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "striker",
+      "file": "assets/factions/tokens/germanoids/striker.png",
+      "sha256": "b6cfa9f48aa743c4bd445f837b80dc19fa71aba0cd5f17fea46b381400a83c33",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        740,
+        60,
+        1004,
+        451
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-heavy-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "heavy",
+      "file": "assets/factions/tokens/germanoids/heavy.png",
+      "sha256": "1dfa72de901af49f070c419d0c5d75f1b847746b8ed94c871dfefdd1d32848f4",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        15,
+        476,
+        390,
+        995
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-support-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "support",
+      "file": "assets/factions/tokens/germanoids/support.png",
+      "sha256": "8f0aa0630eb751b57bc95f794a19013205d242980c36c65d7b727d44c63b3cd2",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        414,
+        483,
+        690,
+        989
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-germanoids-commander-token-v1",
+      "clanId": "germanoids",
+      "clanName": "Germanoids",
+      "role": "commander",
+      "file": "assets/factions/tokens/germanoids/commander.png",
+      "sha256": "a9813b512718ce6cb6ee54c5cbc6451f9d655f3d1f81fc5eb9f1042d46b70b9d",
+      "parentFile": "assets/factions/germanoids-troop-sheet-gpt.png",
+      "parentSha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        689,
+        450,
+        1010,
+        999
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-scout-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "scout",
+      "file": "assets/factions/tokens/xiren/scout.png",
+      "sha256": "4dde3393b0c3b4d623ef7549a3ab9ed97419c00600a451eec442018607b859c6",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        50,
+        92,
+        309,
+        437
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-line-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "line",
+      "file": "assets/factions/tokens/xiren/line.png",
+      "sha256": "829b0433d049fbc5574fb4a2ba9e05507ab637dce82cbb778f82cdceb280a1c4",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        385,
+        55,
+        686,
+        446
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-striker-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "striker",
+      "file": "assets/factions/tokens/xiren/striker.png",
+      "sha256": "d1ae7e5fb52ca2592a29f456349fab7f51d9cabf0a5785810fdcb8f37838dc9d",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        704,
+        35,
+        1008,
+        513
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-heavy-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "heavy",
+      "file": "assets/factions/tokens/xiren/heavy.png",
+      "sha256": "cf566a830f39a5e4bc568f8c48b337b2bac0db763925bc0f77437a54b8212cf6",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        9,
+        499,
+        443,
+        975
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-support-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "support",
+      "file": "assets/factions/tokens/xiren/support.png",
+      "sha256": "cd98b0fdc1fe17f2e3b3f470e16828e1b857c6cdfdde16a182aa23d49ce2cfee",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        386,
+        463,
+        689,
+        973
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-xiren-commander-token-v1",
+      "clanId": "xiren",
+      "clanName": "XiRen",
+      "role": "commander",
+      "file": "assets/factions/tokens/xiren/commander.png",
+      "sha256": "87f6b314713c739cf908bcde57ab7bb88bf7419c5bc748c26f7115f308293120",
+      "parentFile": "assets/factions/xiren-troop-sheet-gpt.png",
+      "parentSha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        695,
+        442,
+        1013,
+        992
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-scout-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "scout",
+      "file": "assets/factions/tokens/hoshikage/scout.png",
+      "sha256": "b185ddd4cab2785e7741d5b79cd89e352ce59f5c825548407d3786f1c1baded3",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        29,
+        70,
+        327,
+        454
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-line-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "line",
+      "file": "assets/factions/tokens/hoshikage/line.png",
+      "sha256": "81bccab2b6eb66fd012b03ef695e05a5f195570fc946e7526b0b6852bca09b88",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        382,
+        9,
+        671,
+        473
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-striker-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "striker",
+      "file": "assets/factions/tokens/hoshikage/striker.png",
+      "sha256": "00aa56694d5692bd0eadae6c8e38cf46887efe3000b9a7ccf39ec64b9d3d3881",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        707,
+        20,
+        1013,
+        475
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-heavy-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "heavy",
+      "file": "assets/factions/tokens/hoshikage/heavy.png",
+      "sha256": "4024e4f82584ffa176efc329ace837efedbf102970a37198c1340979afe8ee08",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        12,
+        490,
+        404,
+        1006
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-support-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "support",
+      "file": "assets/factions/tokens/hoshikage/support.png",
+      "sha256": "72a8b834db7fbcb99d392ea8c78f8b70b0ba9512363409c3a1c278ad78edd3ae",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        392,
+        512,
+        689,
+        1002
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-hoshikage-commander-token-v1",
+      "clanId": "hoshikage",
+      "clanName": "Hoshikage",
+      "role": "commander",
+      "file": "assets/factions/tokens/hoshikage/commander.png",
+      "sha256": "fac9b7b075439080b7365b71589ebc1a47dc22cd562e520d45fdfb280206240b",
+      "parentFile": "assets/factions/hoshikage-troop-sheet-gpt.png",
+      "parentSha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        704,
+        394,
+        1015,
+        1006
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-scout-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "scout",
+      "file": "assets/factions/tokens/solandinos/scout.png",
+      "sha256": "a5d513ac7e6759d228831cf552ceaa192887a04f7ee7ac8c9cbe87f534827e19",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        20,
+        94,
+        321,
+        462
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-line-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "line",
+      "file": "assets/factions/tokens/solandinos/line.png",
+      "sha256": "488d48bb6230cb44a0260c697ce24088585b89d43ec6a89332b3b0c4384a08d0",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        377,
+        8,
+        683,
+        472
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-striker-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "striker",
+      "file": "assets/factions/tokens/solandinos/striker.png",
+      "sha256": "768efe7a37c4dda1f7627eb2bac62b9ace0072df77a5822592f3eb76f6331f3f",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        687,
+        42,
+        1011,
+        470
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-heavy-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "heavy",
+      "file": "assets/factions/tokens/solandinos/heavy.png",
+      "sha256": "71d9c8b255e56f08af359aac74d3ab9e59724e8e84442a48e9137d2107626ea0",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        8,
+        497,
+        398,
+        1001
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-support-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "support",
+      "file": "assets/factions/tokens/solandinos/support.png",
+      "sha256": "1c7456bdf24a5a3e36de530a989b71317f2c62735e150ca1fbd2cf6225c84759",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        409,
+        501,
+        711,
+        1004
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-solandinos-commander-token-v1",
+      "clanId": "solandinos",
+      "clanName": "Solandinos",
+      "role": "commander",
+      "file": "assets/factions/tokens/solandinos/commander.png",
+      "sha256": "19407d0df173db3b0ab2212717c59cdf296cbe00f8fe02db2efcb3f834851cf7",
+      "parentFile": "assets/factions/solandinos-troop-sheet-gpt.png",
+      "parentSha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        712,
+        437,
+        1016,
+        1010
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-scout-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "scout",
+      "file": "assets/factions/tokens/zoryani/scout.png",
+      "sha256": "06a5ba91b18e1a5ce6bd93782bfae5fecf89d45c971da50c02d584c5c11ddf5c",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        35,
+        74,
+        319,
+        441
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-line-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "line",
+      "file": "assets/factions/tokens/zoryani/line.png",
+      "sha256": "dd258a9ef6334b64e7950adb968876330d15889c0137d9c99052671e1cee96d8",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        365,
+        18,
+        662,
+        458
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-striker-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "striker",
+      "file": "assets/factions/tokens/zoryani/striker.png",
+      "sha256": "b982073d5dc464f7307b4e56a1453d880fd99ecdc17a9b71c6df1edc223391c8",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        676,
+        45,
+        1015,
+        464
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-heavy-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "heavy",
+      "file": "assets/factions/tokens/zoryani/heavy.png",
+      "sha256": "7c415dc741931966fdf5f1c21f0995fcea7b7d44a1267ca68d4596e733b5d6ba",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        6,
+        502,
+        363,
+        993
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-support-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "support",
+      "file": "assets/factions/tokens/zoryani/support.png",
+      "sha256": "eee606fbd0724a1bfa67825611f24213d7650202afb342185014b56ace770ee6",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        389,
+        498,
+        695,
+        1001
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-zoryani-commander-token-v1",
+      "clanId": "zoryani",
+      "clanName": "Zoryani",
+      "role": "commander",
+      "file": "assets/factions/tokens/zoryani/commander.png",
+      "sha256": "a0bce40807e6dd655480a8398074dfd217e28a7e490c956ec06d05b3b130335b",
+      "parentFile": "assets/factions/zoryani-troop-sheet-gpt.png",
+      "parentSha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+      "dimensions": [
+        512,
+        512
+      ],
+      "hasAlpha": true,
+      "extraction": "connected-component-v1",
+      "sourceBoundingBox": [
+        698,
+        429,
+        1010,
+        1005
+      ],
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    }
+  ]
+}

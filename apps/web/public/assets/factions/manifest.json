@@ -1,0 +1,718 @@
+{
+  "schemaVersion": "smash-droids.asset-manifest.v1",
+  "campaignId": "spherical-world-v1",
+  "generator": "OpenAI GPT Image API",
+  "model": "gpt-image-2",
+  "sourcePlan": "art/prompts/spherical-world-v1.json",
+  "assets": [
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-neo-romans-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "neo-romans",
+        "canonicalName": "Neo Romans",
+        "subtitle": "The Aureate Cohort",
+        "palette": [
+          "#6E2532",
+          "#E8DDC6",
+          "#B78A42",
+          "#292A2E",
+          "#78E4E8"
+        ],
+        "emblem": "A freestanding semicircular arch intersected by two horizontal orbital lines and one central square."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "dd54cb0ab3e8dda041d2b15402269873ebbad1b29c2fb70b4b3bfd65685eda1b",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nNeo Romans \u2014 The Aureate Cohort. Oxblood, warm ivory, brushed brass, basalt, and restrained cyan energy. Armor is built from arch-shaped shoulder plates, rectangular shield planes, architectural ribs, and interlocking masonry-like blocks. Forms are upright, stable, civic, and protective. Equipment emphasizes projected barriers, deployable cover, and formation links. Emblem: one semicircular arch crossed by two thin horizontal orbital lines with one central square. Avoid eagles, laurels, fasces, legionary equipment, historical helmets, Roman numerals, and Latin text.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:48:32.581Z",
+        "providerRequestId": "req_b0dceaf2e7c848e1baf08a3f7f94d786",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/neo-romans-key-art-gpt.png",
+        "bytes": 1595966,
+        "mimeType": "image/png",
+        "sha256": "63f8bb90eb427e8acbd8b60c090b28535db2ce6aa069c4050a8e6f464997e30e",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-neo-romans-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "neo-romans",
+        "canonicalName": "Neo Romans",
+        "subtitle": "The Aureate Cohort",
+        "palette": [
+          "#6E2532",
+          "#E8DDC6",
+          "#B78A42",
+          "#292A2E",
+          "#78E4E8"
+        ],
+        "emblem": "A freestanding semicircular arch intersected by two horizontal orbital lines and one central square."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "7a8daf687769f201dc61cc08ca0604fcae0a89ef094fc92e669c96fb730e62d1",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nNeo Romans \u2014 The Aureate Cohort. Oxblood, warm ivory, brushed brass, basalt, and restrained cyan energy. Armor is built from arch-shaped shoulder plates, rectangular shield planes, architectural ribs, and interlocking masonry-like blocks. Forms are upright, stable, civic, and protective. Equipment emphasizes projected barriers, deployable cover, and formation links. Emblem: one semicircular arch crossed by two thin horizontal orbital lines with one central square. Avoid eagles, laurels, fasces, legionary equipment, historical helmets, Roman numerals, and Latin text.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:49:31.364Z",
+        "providerRequestId": "req_da921a0ad7be4b9582d68a6494b6d630",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/neo-romans-troop-sheet-gpt.png",
+        "bytes": 1881739,
+        "mimeType": "image/png",
+        "sha256": "a0939c77317e506b9da80e258c3b70be1c6b060a0d07ff561bd75a614960592c",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-germanoids-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "germanoids",
+        "canonicalName": "Germanoids",
+        "subtitle": "The Forgewood Union",
+        "palette": [
+          "#34383B",
+          "#234C43",
+          "#B46F45",
+          "#C7C1B4",
+          "#B8E66A"
+        ],
+        "emblem": "Three interlocking dovetail bars inside an open hexagonal frame."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "ebddf28ce63d0ca0f0bdaa57c64df5a1b6696dbcccde0c24217c9bc8a9ba1e87",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nGermanoids \u2014 The Forgewood Union. Graphite, deep pine, hammered copper, pale ash, and restrained lime energy. Use exposed braces, dovetail-shaped connections, modular armor panels, repairable mechanisms, and practical articulated tools. Forms are compact, durable, and workshop-built, with subtle structural rhythms inspired by timber joinery without copying a real building. Emblem: three interlocking dovetail bars inside an open hexagonal frame. Avoid eagles, crosses, runes, blackletter, lightning shapes, twentieth-century uniforms, and red-white-black schemes.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:50:27.673Z",
+        "providerRequestId": "req_cc6ee2c74e3c496bb32532796e987a92",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/germanoids-key-art-gpt.png",
+        "bytes": 1777272,
+        "mimeType": "image/png",
+        "sha256": "9f1e0081e568fd9fe4b4d969faaeb1a608301a345ff05bc8cd8466f7c628163a",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-germanoids-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "germanoids",
+        "canonicalName": "Germanoids",
+        "subtitle": "The Forgewood Union",
+        "palette": [
+          "#34383B",
+          "#234C43",
+          "#B46F45",
+          "#C7C1B4",
+          "#B8E66A"
+        ],
+        "emblem": "Three interlocking dovetail bars inside an open hexagonal frame."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "2a27f26944a9b0d015a303430b1908a9b866ad7b40a9c55e9d6ca156c6c4a842",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nGermanoids \u2014 The Forgewood Union. Graphite, deep pine, hammered copper, pale ash, and restrained lime energy. Use exposed braces, dovetail-shaped connections, modular armor panels, repairable mechanisms, and practical articulated tools. Forms are compact, durable, and workshop-built, with subtle structural rhythms inspired by timber joinery without copying a real building. Emblem: three interlocking dovetail bars inside an open hexagonal frame. Avoid eagles, crosses, runes, blackletter, lightning shapes, twentieth-century uniforms, and red-white-black schemes.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:51:28.892Z",
+        "providerRequestId": "req_4393ca70426c4b47a88d57a03ae5d72b",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/germanoids-troop-sheet-gpt.png",
+        "bytes": 1872244,
+        "mimeType": "image/png",
+        "sha256": "5a58cd681b114757c3127ce45000ad306caad522143317a0f4d411e097f073f1",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-xiren-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "xiren",
+        "canonicalName": "XiRen",
+        "subtitle": "The Celestial Weave",
+        "palette": [
+          "#176B61",
+          "#A9CDB8",
+          "#202A2C",
+          "#E7E4D5",
+          "#F2B84B"
+        ],
+        "emblem": "A rounded square containing three circuit-cloud curves around an empty circular center."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "eac595ae4b9f43fe9db98a512b1977909aa6eda16f6857a2633c89084e0f6e7e",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nXiRen \u2014 The Celestial Weave. Dark jade, celadon, ink black, porcelain, and restrained amber energy. Use balanced horizontal compositions, rounded-square armor, ceramic surfaces, deliberate negative space, segmented circuit-cloud curves, and floating relay elements. Forms communicate redirection, prediction, and linked movement. Emblem: a rounded square holding three continuous circuit-cloud curves around an empty circular center. Avoid dragons, copied calligraphy, stars, dynastic armor, state seals, flag compositions, pagoda costumes, and martial-arts caricature.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:52:21.901Z",
+        "providerRequestId": "req_60ae46241cd5464b83a718a9aa49aae3",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/xiren-key-art-gpt.png",
+        "bytes": 1610125,
+        "mimeType": "image/png",
+        "sha256": "f0eabc4e96b8e55284a0170fca90376a95b9c8b986404834f556d92b064b1f99",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-xiren-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "xiren",
+        "canonicalName": "XiRen",
+        "subtitle": "The Celestial Weave",
+        "palette": [
+          "#176B61",
+          "#A9CDB8",
+          "#202A2C",
+          "#E7E4D5",
+          "#F2B84B"
+        ],
+        "emblem": "A rounded square containing three circuit-cloud curves around an empty circular center."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "983819283fc2ee955d5a7672271e567f6d08c020bdd25cda36e5c43385f9655f",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nXiRen \u2014 The Celestial Weave. Dark jade, celadon, ink black, porcelain, and restrained amber energy. Use balanced horizontal compositions, rounded-square armor, ceramic surfaces, deliberate negative space, segmented circuit-cloud curves, and floating relay elements. Forms communicate redirection, prediction, and linked movement. Emblem: a rounded square holding three continuous circuit-cloud curves around an empty circular center. Avoid dragons, copied calligraphy, stars, dynastic armor, state seals, flag compositions, pagoda costumes, and martial-arts caricature.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:53:25.401Z",
+        "providerRequestId": "req_efc7b81f4c924c93a14cec8053b68fb1",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/xiren-troop-sheet-gpt.png",
+        "bytes": 1772362,
+        "mimeType": "image/png",
+        "sha256": "3f04186ae0b03b23018d986ce461bda1e598c85a84deef73e66ab0c58dd61141",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-hoshikage-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "hoshikage",
+        "canonicalName": "Hoshikage",
+        "subtitle": "The Folded Circuit",
+        "palette": [
+          "#232A59",
+          "#E9E3D5",
+          "#3C8C88",
+          "#25272A",
+          "#FF725E"
+        ],
+        "emblem": "Five folded rhombi interlocked around an irregular hollow pentagon."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "7b114a3a01cac8e9a8741aad4295dc25bd84da4290259b9600423fbf522d7569",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nHoshikage \u2014 The Folded Circuit. Midnight indigo, soft paper, oxidized teal, charcoal, and restrained coral energy. Use nested folding plates, visible precision hinges, compact transformed volumes, offset symmetry, diamond joints, and rectangular sensor vanes. Every chassis appears capable of changing stance or unfolding into another configuration. Emblem: five folded rhombi interlocked around an irregular hollow pentagon. Avoid rising-sun rays, chrysanthemum seals, torii, copied kanji, samurai armor, historical swords, and imperial imagery.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:54:19.671Z",
+        "providerRequestId": "req_03368136b30745a2bb1adfa8c2eee26b",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/hoshikage-key-art-gpt.png",
+        "bytes": 1779766,
+        "mimeType": "image/png",
+        "sha256": "843c3b0aaf87b8f054a7fdd01b3e18b06bf03fb432937ebbf69aeae6d077ddfa",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-hoshikage-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "hoshikage",
+        "canonicalName": "Hoshikage",
+        "subtitle": "The Folded Circuit",
+        "palette": [
+          "#232A59",
+          "#E9E3D5",
+          "#3C8C88",
+          "#25272A",
+          "#FF725E"
+        ],
+        "emblem": "Five folded rhombi interlocked around an irregular hollow pentagon."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "dda5d757e4aaf2a9af1019f3c968067ddcb8986e1876470cdbbabe9dd87b3309",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nHoshikage \u2014 The Folded Circuit. Midnight indigo, soft paper, oxidized teal, charcoal, and restrained coral energy. Use nested folding plates, visible precision hinges, compact transformed volumes, offset symmetry, diamond joints, and rectangular sensor vanes. Every chassis appears capable of changing stance or unfolding into another configuration. Emblem: five folded rhombi interlocked around an irregular hollow pentagon. Avoid rising-sun rays, chrysanthemum seals, torii, copied kanji, samurai armor, historical swords, and imperial imagery.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:55:18.839Z",
+        "providerRequestId": "req_868ef566772541619aba113b68c15b92",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/hoshikage-troop-sheet-gpt.png",
+        "bytes": 1875709,
+        "mimeType": "image/png",
+        "sha256": "71c3f3187427acb3dbc5f579c6b3d743adb76380821467491b94f3c402d34595",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-solandinos-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "solandinos",
+        "canonicalName": "Solandinos",
+        "subtitle": "The Sunriver Concord",
+        "palette": [
+          "#A84F35",
+          "#2C9A9A",
+          "#264B83",
+          "#D6B878",
+          "#F5D547"
+        ],
+        "emblem": "A stepped diamond divided by one continuous S-shaped river channel."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "8d826f631e7055c978cfbf6028bdef53ae7ffa55958f29103398217d5e55f7a8",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nSolandinos \u2014 The Sunriver Concord. Terracotta, river turquoise, deep ultramarine, sandstone, and restrained yellow energy. Use stepped armor terraces, strong diagonal color fields, branching energy conduits, high-clearance mobility systems, and forms adapted to dramatic changes in elevation. Combine highland solidity with flowing river-like cable paths. Emblem: a stepped diamond divided by one continuous S-shaped river channel. Avoid condors, sun faces, copied indigenous patterns, feathers, masks, ceremonial dress, sacred imagery, flags, and generic jungle-tribe aesthetics.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:56:09.670Z",
+        "providerRequestId": "req_43479ff09bf74b138ee010fd22328b99",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/solandinos-key-art-gpt.png",
+        "bytes": 1741240,
+        "mimeType": "image/png",
+        "sha256": "44a61bb602dfb8791ea12d7a52aa8e12100e776db0b373c5f0017f7844e7ca65",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-solandinos-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "solandinos",
+        "canonicalName": "Solandinos",
+        "subtitle": "The Sunriver Concord",
+        "palette": [
+          "#A84F35",
+          "#2C9A9A",
+          "#264B83",
+          "#D6B878",
+          "#F5D547"
+        ],
+        "emblem": "A stepped diamond divided by one continuous S-shaped river channel."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "ab2264ff3f0dd81a92039644308cfc6e4470ad3ff7bdf9d37966764259bf5f3d",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nSolandinos \u2014 The Sunriver Concord. Terracotta, river turquoise, deep ultramarine, sandstone, and restrained yellow energy. Use stepped armor terraces, strong diagonal color fields, branching energy conduits, high-clearance mobility systems, and forms adapted to dramatic changes in elevation. Combine highland solidity with flowing river-like cable paths. Emblem: a stepped diamond divided by one continuous S-shaped river channel. Avoid condors, sun faces, copied indigenous patterns, feathers, masks, ceremonial dress, sacred imagery, flags, and generic jungle-tribe aesthetics.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:57:08.447Z",
+        "providerRequestId": "req_35624b6e115544cfb41af054e4fac1b1",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/solandinos-troop-sheet-gpt.png",
+        "bytes": 1880858,
+        "mimeType": "image/png",
+        "sha256": "3d5e1f27da1ce070e34d1cd0fac746dd744dfc863609107ff934e9779a2d7286",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-zoryani-key-art-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "faction_key_art",
+      "clan": {
+        "id": "zoryani",
+        "canonicalName": "Zoryani",
+        "subtitle": "The Aurora Foundry",
+        "palette": [
+          "#182B49",
+          "#B8C6CB",
+          "#E49B3D",
+          "#685D91",
+          "#7DF2E4"
+        ],
+        "emblem": "Three offset aurora arcs enclosing a faceted vertical lozenge."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "ca1d77f9821edb7a335206a9a4ce6095e6a4d353215e32c656a0d43135449e1a",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nZoryani \u2014 The Aurora Foundry. Midnight blue, frost gray, forge amber, cold violet, and restrained ice-cyan energy. Use insulated rounded outer hulls, angular crystalline energy cores, thermal shutters, heat-exchange fins, broad stabilizing feet, and luminous aurora-like arcs. Forms are resilient, communal, and built for long darkness and extreme cold. Emblem: three offset aurora arcs enclosing one faceted vertical lozenge. Avoid red stars, hammer-and-sickle shapes, double-headed eagles, medals, military greatcoats, propaganda styling, onion-dome costumes, and flag tricolors.\n\nSquare faction key art. Show one Commander as the dominant full-body figure in a dynamic three-quarter view, with one Scout and one Heavy supporting in the middle distance. Place them in an abstract arena environment whose architecture echoes the clan geometry without depicting a real place. Commander occupies roughly 55 percent of canvas height. Keep important forms inside a central 80 percent safe area. Use the clan emblem once as a large subtle environmental relief and once as a small armor badge. Cinematic but readable, clear foreground-middle-background separation, collectible-game-box quality, opaque background, no title or typography.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:57:58.709Z",
+        "providerRequestId": "req_c87ad7bddbc640b3aaf50fdcc56ed823",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/zoryani-key-art-gpt.png",
+        "bytes": 1987512,
+        "mimeType": "image/png",
+        "sha256": "abff969efebc9c5457a5f57e9af8b7e3caddcfcc7363bcf1cf2733df29312f0f",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-zoryani-troop-sheet-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "troop_token_sheet",
+      "clan": {
+        "id": "zoryani",
+        "canonicalName": "Zoryani",
+        "subtitle": "The Aurora Foundry",
+        "palette": [
+          "#182B49",
+          "#B8C6CB",
+          "#E49B3D",
+          "#685D91",
+          "#7DF2E4"
+        ],
+        "emblem": "Three offset aurora arcs enclosing a faceted vertical lozenge."
+      },
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "transparent",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "650edc327cbbbe3c07d35a2f86f68d8e7d87c838dd8f895c44ff78f1c23985fd",
+        "exact": "SMASH DROIDS FACTION ASSET \u2014 premium stylized science-fiction tabletop strategy game art. Create an entirely fictional culture of autonomous combat robots. Draw only from broad traditions of architecture, craft, landscape, material, and abstract geometry; never depict or reproduce any real ethnic group, national military, government, religion, sacred object, historical uniform, flag, political symbol, extremist symbol, propaganda, or historical insignia. Shared art direction: heroic industrial realism with clean stylization; sophisticated hard-surface concept art; large readable armor masses; exposed functional joints; ceramic, painted metal, brushed alloy, subtle wear; restrained luminous energy accents; expressive machine posture without human faces; believable weight; premium modern strategy-game presentation; strong silhouette readability at thumbnail size; consistent neutral-cool studio lighting with one warm rim light; high material fidelity; no gore. All droids share one technological era, base joint engineering, optic design, and rendering language. Clan identity comes from armor geometry, palette, emblem, movement philosophy, and equipment\u2014not costume or caricature. Use only the specified abstract emblem. No readable words, letters, numbers, pseudo-writing, signatures, watermarks, UI frames, existing-media logos, or extra insignia. Weapons are clearly fantastical arena systems, never replicas of modern firearms.\n\nZoryani \u2014 The Aurora Foundry. Midnight blue, frost gray, forge amber, cold violet, and restrained ice-cyan energy. Use insulated rounded outer hulls, angular crystalline energy cores, thermal shutters, heat-exchange fins, broad stabilizing feet, and luminous aurora-like arcs. Forms are resilient, communal, and built for long darkness and extreme cold. Emblem: three offset aurora arcs enclosing one faceted vertical lozenge. Avoid red stars, hammer-and-sickle shapes, double-headed eagles, medals, military greatcoats, propaganda styling, onion-dome costumes, and flag tricolors.\n\nSquare transparent PNG troop-token sheet with true alpha background. Show exactly six separate full-body droids in a clean 3-column by 2-row arrangement: top row Scout, Line, Striker; bottom row Heavy, Support, Commander. Every unit faces three-quarters toward screen right, uses the same orthographic-like camera height, stands on no base, casts no external ground shadow, and remains fully inside its cell with generous transparent padding. No overlap, connecting effects, environment, scenery, border, labels, text, particles crossing cells, or cropped limbs. Scout is smallest and fastest; Line balanced; Striker narrow and aggressive; Heavy largest and widest; Support has obvious non-weapon utility hardware; Commander tallest and most distinctive. Put one small abstract clan emblem consistently on each torso or shoulder. Hard clean alpha edges suitable for automated cropping. Transparent background, PNG output.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:58:58.826Z",
+        "providerRequestId": "req_56231b1b0bce499588ceaac8def850af",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/factions/zoryani-troop-sheet-gpt.png",
+        "bytes": 1887221,
+        "mimeType": "image/png",
+        "sha256": "5f0f2b08abcc9488298859692dc5e5e0a55d2eda141dda245646fcb56fe53880",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": true
+      },
+      "review": {
+        "technicalStatus": "approved-source-derivatives-required",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Six isolated primary silhouettes verified; connected-component derivatives used because fixed grid lacks transparent gutters.",
+        "exactUnitCount": 6
+      }
+    },
+    {
+      "schemaVersion": "smash-droids.asset-provenance.v1",
+      "assetId": "sd-spherical-terrain-atlas-v1",
+      "campaignId": "spherical-world-v1",
+      "assetType": "terrain_atlas",
+      "clan": null,
+      "provider": "openai",
+      "endpoint": "/v1/images/generations",
+      "model": "gpt-image-2",
+      "request": {
+        "size": "1024x1024",
+        "quality": "medium",
+        "outputFormat": "png",
+        "background": "opaque",
+        "moderation": "auto",
+        "n": 1
+      },
+      "prompt": {
+        "sha256": "10399a9281dd3197953000ecca40068682fc2fc7ad09b6724c232e8ba79d73dd",
+        "exact": "SMASH DROIDS spherical-world terrain texture atlas for a premium science-fiction strategy game. Exactly six isolated square swatches in a 3-column by 2-row arrangement, in this order: ocean, plains, forest, desert, highlands, tundra. Each swatch is a seamless top-down stylized material tile with a distinct non-color texture: animated-looking deep water currents without text, short grass and soil contour lines, dense geometric canopy clusters, wind-cut dunes and cracked earth, angular rock strata and elevation ridges, crystalline snow and ice fissures. Shared cinematic hard-surface tabletop rendering, no units, no buildings, no labels, no border, no overlap, no maps, no real-world geography. Keep every swatch fully inside its cell for fixed automated cropping.",
+        "revised": null
+      },
+      "generation": {
+        "createdAt": "2026-08-31T01:59:53.660Z",
+        "providerRequestId": "req_2e446421664b4d3e9ca05439ec59ee67",
+        "attempt": 1
+      },
+      "output": {
+        "file": "assets/terrain/terrain-atlas-gpt.png",
+        "bytes": 2756646,
+        "mimeType": "image/png",
+        "sha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+        "width": 1024,
+        "height": 1024,
+        "hasAlpha": false
+      },
+      "review": {
+        "technicalStatus": "approved",
+        "culturalReviewStatus": "approved",
+        "prohibitedSymbolReview": "passed",
+        "notes": "Visual composition and crop safety verified."
+      }
+    }
+  ]
+}

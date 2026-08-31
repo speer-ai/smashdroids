@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "smash-droids.terrain-manifest.v1",
+  "campaignId": "spherical-world-v1",
+  "sourceManifest": "assets/factions/manifest.json",
+  "assets": [
+    {
+      "assetId": "sd-ocean-terrain-v1",
+      "terrainId": "ocean",
+      "file": "assets/terrain/ocean-gpt.png",
+      "sha256": "c40d5d7b657a41c81a5e87034165e8800a154f7227fac7a2e7724d4470b06baa",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 0,
+        "column": 0,
+        "box": [
+          0,
+          0,
+          341,
+          512
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-plains-terrain-v1",
+      "terrainId": "plains",
+      "file": "assets/terrain/plains-gpt.png",
+      "sha256": "3a962d2e6957e6ca754a12d343615548cc1e17d28a653a7692a194337514eea9",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 0,
+        "column": 1,
+        "box": [
+          341,
+          0,
+          683,
+          512
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-forest-terrain-v1",
+      "terrainId": "forest",
+      "file": "assets/terrain/forest-gpt.png",
+      "sha256": "44d740dc353b62e4e85147736258ab654dccf31947e54c7d2142f50a07977467",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 0,
+        "column": 2,
+        "box": [
+          683,
+          0,
+          1024,
+          512
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-desert-terrain-v1",
+      "terrainId": "desert",
+      "file": "assets/terrain/desert-gpt.png",
+      "sha256": "c0d03d8a49873dffd7d46191aba335f2b42ea1c2d83de5edeaf54508f8871b13",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 1,
+        "column": 0,
+        "box": [
+          0,
+          512,
+          341,
+          1024
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-highlands-terrain-v1",
+      "terrainId": "highlands",
+      "file": "assets/terrain/highlands-gpt.png",
+      "sha256": "fb397ab3c13867daf8f5734ae1fc7e78de28f3630a2f68bbf3c83f1e0c62f493",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 1,
+        "column": 1,
+        "box": [
+          341,
+          512,
+          683,
+          1024
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    },
+    {
+      "assetId": "sd-tundra-terrain-v1",
+      "terrainId": "tundra",
+      "file": "assets/terrain/tundra-gpt.png",
+      "sha256": "f0d7f9a23d9f9259f1b57db034104db339d75d3df3523b479676c0f8f6fd5f9c",
+      "parentFile": "assets/terrain/terrain-atlas-gpt.png",
+      "parentSha256": "ee21ee5bdb8daf9824770f2ba2b132be3c0d8842d6e797af49462a060e098756",
+      "sourceCell": {
+        "row": 1,
+        "column": 2,
+        "box": [
+          683,
+          512,
+          1024,
+          1024
+        ]
+      },
+      "dimensions": [
+        512,
+        512
+      ],
+      "extraction": "fixed-atlas-cell-v1",
+      "review": {
+        "technicalStatus": "approved",
+        "visualStatus": "approved"
+      }
+    }
+  ]
+}
