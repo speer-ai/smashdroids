@@ -1,0 +1,59 @@
+{
+  "schema": "smashdroids-gameplay-assets/1",
+  "generator": "ChatGPT GPT Image",
+  "generatedAt": "2026-08-30",
+  "artDirection": "Industrial spherical hex warfare; black, spectral white, acid green, restrained crimson",
+  "assets": [
+    {
+      "id": "hero-hexgrid-planetary-warfront",
+      "file": "hero-hexgrid-planetary-warfront.png",
+      "kind": "hero",
+      "sha256": "887401e358a3a1ecfd0330b1946b6676a9a07359b1e51816a54fa28bc927c0f6",
+      "sourceConversation": "https://chatgpt.com/c/6a94bd57-5d48-83e9-814e-f5d53c74f93e",
+      "prompt": "Create a cinematic widescreen key art image for an original science-fiction strategy game called Smash Droids. Show a massive spherical planet whose entire visible surface is unmistakably tessellated with pointy-top HEXAGONAL terrain tiles, never squares or octagons. Night-side space setting, razor-sharp industrial military design, black and spectral-white palette with restrained electric acid-green command lights and small crimson enemy accents. Tiny autonomous mech armies, orbital satellites, radar sweeps, artillery trajectories, and territory fronts moving across the curved hex world. Epic scale, realistic premium game cinematics, dramatic rim lighting, dense atmosphere, no text, no logos, no UI, no watermark, no border. Compose with the planet dominant on the right and darker negative space on the left for landing-page headline. 16:9."
+    },
+    {
+      "id": "vfx-atlas-source",
+      "file": "vfx-atlas-gpt-image.png",
+      "kind": "source-atlas",
+      "sha256": "e568a53fff0c4322e18a523c398cd264de2b589c5648aa7088431eedfcd1eb9a",
+      "sourceConversation": "https://chatgpt.com/c/6a94beb2-c728-83ea-bb9c-cee85f6e4aad",
+      "prompt": "Generate an image now: a professional VFX sprite atlas for the original science-fiction hex strategy game Smash Droids. A single wide 5:1 image containing exactly five isolated, evenly spaced effects from left to right: acid-green movement trail, white-hot kinetic impact with crimson core, acid-green hex capture shockwave, spectral-white defensive hex shield, and acid-green radar/SIGINT sweep. Pure black compositing background. No text, labels, logos, UI, watermark, or border."
+    },
+    {
+      "id": "effect-movement",
+      "file": "effect-movement-gpt.png",
+      "kind": "runtime-vfx",
+      "derivedFrom": "vfx-atlas-source",
+      "sha256": "27a36dc5a2fc6f0654b36ef9f5c3791fef30a679e2ed174bf6a1145e3e6b358d"
+    },
+    {
+      "id": "effect-attack",
+      "file": "effect-attack-gpt.png",
+      "kind": "runtime-vfx",
+      "derivedFrom": "vfx-atlas-source",
+      "sha256": "3decb93d84c5f246a73f51b7bd5177feb9bb481a740b438a87e51e95fe4bd152"
+    },
+    {
+      "id": "effect-capture",
+      "file": "effect-capture-gpt.png",
+      "kind": "runtime-vfx",
+      "derivedFrom": "vfx-atlas-source",
+      "sha256": "de20b48e1d8cb8ad7e15eaae641c152ea9bd67d7967fe2f99609d2a6c2f9c060"
+    },
+    {
+      "id": "effect-guard",
+      "file": "effect-guard-gpt.png",
+      "kind": "runtime-vfx",
+      "derivedFrom": "vfx-atlas-source",
+      "sha256": "a00b728496d29d17a67c1741a458e374057e4935a9090408986de246121d4bd6"
+    },
+    {
+      "id": "effect-radar",
+      "file": "effect-radar-gpt.png",
+      "kind": "runtime-vfx",
+      "derivedFrom": "vfx-atlas-source",
+      "sha256": "4e4dbfaf5cc6c3fa98ce8af64d32f475b8a4a7d2ed7b2ea59de5655c0dc029b7"
+    }
+  ]
+}

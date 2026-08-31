@@ -1,68 +1,54 @@
-# Smash Droids MVP Product and Rules Contract
+# Smash Droids V0 Product and Rules Contract
 
 ## Player promise
 
-Field an army of AI agents, challenge a friend’s AI army, and watch the agents coordinate and fight a fair, legible grid battle.
+Build a civilization, command an AI war cabinet, and conquer a spherical world with no edge. Players authenticate, field built-in or external AI agents, and watch every accepted or rejected order resolve through a deterministic event stream.
 
-## Why strategy first
+## World and geometry
 
-Smash Droids uses simultaneous grid turns so models with different response speeds can compete on tactical intelligence rather than network latency. Each player fields a roster of AI-controlled droids; agents receive role-scoped observations and submit bounded structured commands through MCP.
+- The player-facing world is spherical and uses **hexagonal tiles**. Squares and octagonal display plates are obsolete.
+- Terrain, territory, settlements, headquarters, combined arms, fog, radar/SIGINT, and orbiting satellites expand from the v0 tutorial slice.
+- Geometry identity is versioned. A geometry change is a hard replay/model compatibility boundary.
+- A mathematically closed sphere cannot contain only perfect regular hexagons; the production world artifact must explicitly encode unavoidable defect cells or seam topology rather than disguising squares as hexes.
 
-## Match format
+## Sequential turn loop
 
-- Two human owners; each fields an army of AI-controlled droids.
-- MVP roster: three AI agent seats per army, expandable in later formats.
-- Three neutral energy cores around the center.
-- Maximum 20 turns; default decision clock 20 seconds.
-- Win immediately by destroying the opposing Core Base.
-- Otherwise score after turn 20: base health + surviving droid health + controlled-core points.
-- Deterministic tie-breaks: objective control, damage dealt, then seeded coin flip.
+1. The server identifies one active player/seat.
+2. That player's AI receives a private turn-start observation and legal-action contract.
+3. The AI submits an ordered, bounded command set.
+4. Commands resolve one at a time against each intermediate state; invalid commands emit immutable rejection events.
+5. Terminal victory stops the remaining command set immediately.
+6. Control rotates to the next living player.
 
-## Turn loop
+This is Polytopia-style sequential play—not simultaneous bundle resolution. Response speed never changes the deterministic order within an accepted command set.
 
-1. Server publishes each side's fog-filtered observation.
-2. Each agent submits one command for each living droid before the deadline.
-3. Missing/invalid commands become `guard`—never retry indefinitely.
-4. Server locks both command bundles.
-5. Deterministic reducer resolves movement, collisions, attacks, abilities, objectives, hazards, and deaths.
-6. Server appends public and private events and broadcasts the public frame.
+## Playable tutorial ruleset
 
-## Initial action vocabulary
+The deployed first slice uses `smashdroids-tutorial/1`, ABI 1, geometry `axial-hex-v1`:
 
-Each command contains a droid ID and exactly one action:
+- Pointy-top axial hex theater, radius 3.
+- Three droids per side: striker, bulwark, scout.
+- Player submits up to three ordered commands, then the deterministic baseline AI responds.
+- Actions: adjacent `move`, adjacent `attack`, `capture`, `guard`, and `radar`.
+- Capturing the relay or eliminating the opposing force wins immediately.
+- Every resolution emits a typed event used by the UI's action-specific animation.
 
-- `move(path)` — up to unit movement allowance using orthogonal steps.
-- `attack(target_id)` — target must be visible and in range.
-- `ability(ability_id, target)` — unit-specific cooldown ability.
-- `guard` — gain temporary defense and hold position.
+Tutorial match state is local to the authenticated browser in this release. Persistent PvP matches require the reviewed namespaced Supabase schema before launch.
 
-Action schema is versioned and bounded. Agents never submit arbitrary code, prose, or direct state mutations.
+## Agent modes
 
-## Droids
+- Free deterministic baseline AI.
+- Server-side built-in OpenAI agent; provider credentials remain server-only.
+- Bring-your-own agents over authenticated MCP/HTTP. Inference runs in the player's environment by default.
+- No user provider keys are stored in v0.
 
-### Striker
-- High damage, medium health/mobility.
-- Ability: `overcharge` — stronger attack, then reduced defense until next turn.
+## Canonical provenance
 
-### Bulwark
-- High health, low mobility.
-- Ability: `barrier` — protects an adjacent ally or tile for one resolution.
-
-### Scout
-- High mobility/vision, low health.
-- Ability: `blink` — short relocation ignoring occupied intermediate tiles, with cooldown.
-
-## Simultaneous-resolution principles
-
-- Canonical stable ordering derives from turn seed, phase, initiative, and droid ID.
-- Movement conflicts are rule-resolved, not arrival-time resolved.
-- Both valid attacks can land even if one attacker is destroyed in the same attack phase.
-- Hidden information is server-filtered; clients receive only authorized observations/events.
-- The exact ruleset ID, ABI, digest, seed, engine version, and action schema are stored with every match and replay.
+Every persistent match and replay must carry ruleset ID, ABI, digest, geometry, state schema, action vocabulary, seed, and engine version. Store private observations, ordered commands, accepted/rejected outcomes, compact public events, model/agent metadata, latency, fallbacks, and final replay/state digests under strict visibility rules.
 
 ## MCP contract
 
-Minimum tools:
+Minimum tools remain:
 
 - `smashdroids.create_agent`
 - `smashdroids.join_match`
@@ -72,27 +58,18 @@ Minimum tools:
 - `smashdroids.get_match_status`
 - `smashdroids.forfeit`
 
-Resources:
+Every mutation is authenticated, idempotent, rate-limited, and scoped to one player's seat. One-time MCP credentials are stored only as hashes.
 
-- `smashdroids://rules/current`
-- `smashdroids://matches/{match_id}/public`
-- `smashdroids://matches/{match_id}/observation`
+## Visual contract
 
-Every mutation is authenticated, idempotent, rate-limited, and scoped to one player's seat.
+- GPT Image-generated art is versioned with source prompts, source outputs, derivatives, and hashes.
+- Movement, attack, capture, guard, radar/recon, construction, and other resolved actions use distinct visual language.
+- Procedural timing is driven by authoritative events; visuals never invent state transitions.
+- Non-trivial motion has a reduced-motion equivalent.
 
-## Spectator experience
+## Security and data
 
-- Live board animation generated from authoritative events—not video transcoding.
-- Timeline with pause, rewind, speed control, and per-turn command/reasoning disclosure where players opt in.
-- Agent cards show model/agent identity, record, rating, and owner.
-- Shareable match URL and deterministic replay.
-- Optional commentary can be generated asynchronously; commentary never affects the simulation.
-
-## MVP acceptance criteria
-
-1. Two reference bots complete 100 seeded matches with no reducer crash or nondeterministic replay.
-2. A remote MCP client can join, inspect, and submit legal turns.
-3. Invalid, late, duplicate, and unauthorized submissions are safely rejected or converted to guard according to the contract.
-4. A browser watches a live match and replays it to the same final digest.
-5. Secrets never enter match logs, opponent observations, or public replays.
-6. Local Supabase development and a production deployment path are documented.
+- Supabase browser access uses only the public URL and publishable key protected by RLS.
+- Service-role and provider credentials never enter browser bundles or Git.
+- New persistence uses additive `sd_*` tables and preserves all legacy data.
+- Existing legacy tables are not modified without ownership review.

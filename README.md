@@ -1,44 +1,63 @@
-# SmashDroids
+# Smash Droids
 
-**Battle your AI against your friends' AIs.**
+**Build a civilization. Command an AI war cabinet. Conquer a world with no edge.**
 
-Smash Droids is an MCP-first PvP grid strategy game where people field armies of AI agents against each other. Each agent controls a droid or battlefield role, makes tactical decisions through MCP, and participates in a live match humans can spectate.
+Smash Droids is an MCP-first PvP spherical grand-strategy game where authenticated players field built-in or bring-your-own AI agents. Turns are sequential: one active AI receives a private observation, submits a bounded ordered command set, and watches each order resolve before control rotates.
 
-## Product thesis
+**Live:** https://smashdroids.com
 
-- AI agents should compete through a small, deterministic, inspectable action API.
-- Humans should be able to connect an agent, challenge a friend, and watch the match live.
-- Matches should be replayable and auditable from an immutable event log.
-- The platform must never require users to hand their AI-provider credentials to an opponent or to SmashDroids when an agent-hosted MCP connection is available.
+## Playable v0
 
-## MVP stack
+- Supabase email/password authentication with server-verified sessions.
+- Protected `/play` command center.
+- Pointy-top axial **hex** tutorial theater—no square-tile or simultaneous-turn prototype.
+- Up to three ordered player commands followed by a deterministic baseline AI response.
+- Movement, attack, capture, guard, and radar event types with distinct GPT Image-generated VFX.
+- Immediate victory by relay capture or opposing-force elimination.
+- Versioned rules identity: `smashdroids-tutorial/1`, ABI 1, geometry `axial-hex-v1`.
 
-- **Web:** Next.js + TypeScript, deployed on Vercel
-- **Data/Auth/Realtime:** Supabase Postgres, Auth, Realtime
-- **Game engine:** deterministic pure TypeScript package with versioned rules
-- **Agent interface:** MCP Streamable HTTP plus a narrow REST compatibility layer
-- **Authoritative match execution:** server-side worker / Supabase Edge Function with transactional turn resolution
-- **Spectating:** event-log subscription through Supabase Realtime; deterministic client replay
+Tutorial state is intentionally local to the authenticated browser. Persistent PvP matches will use reviewed additive `sd_*` Supabase tables; legacy data remains untouched.
 
-## Important integration truth
+## Product principles
 
-A paid ChatGPT or Claude consumer subscription generally does **not** provide reusable API credits. SmashDroids will support:
+- Deterministic, versioned rules and immutable accepted/rejected event traces.
+- Spherical strategic world with player-facing hexagonal tiles, terrain, territory, settlements, combined arms, fog, radar/SIGINT, and orbital systems.
+- Free deterministic baseline AI, server-side built-in OpenAI, and bring-your-own AI through authenticated MCP/HTTP.
+- BYO inference runs in the player's environment. V0 does not store user-supplied provider keys.
+- Provider and service-role credentials remain server-only and never enter browser bundles, public artifacts, or Git.
+- Realtime streams compact deterministic events, not video.
 
-1. **Bring Your Own Agent** via MCP (preferred): Claude Desktop/Code, Hermes, custom agents, and other MCP clients.
-2. **Hosted provider adapter** using a user's separately supplied API key, stored in a secure vault and never exposed to opponents.
-3. Platform-specific OAuth/Actions only where providers officially support the required delegated execution.
+## Stack
 
-## Repository layout
+- **Web:** Next.js 16, React 19, TypeScript, Vercel
+- **Identity:** Supabase Auth via `@supabase/ssr`
+- **Testing:** Vitest, TypeScript, ESLint, production build gates
+- **Gameplay:** pure deterministic TypeScript reducer and semantic SVG hex controls
+- **Art:** versioned GPT Image source assets, prompts, hashes, and runtime derivatives under `apps/web/public/assets/gameplay/`
 
-```text
-apps/web/           Next.js spectator and account UI
-packages/engine/    deterministic Smash Droids rules and reducer
-packages/mcp/       MCP server and agent-facing tools
-packages/protocol/  shared schemas/types
-docs/               product, rules, security, and deployment docs
-supabase/            migrations and local Supabase configuration
+## Local development
+
+```bash
+npm install
+cp .env.example apps/web/.env.local
+npm run dev --workspace @smashdroids/web
 ```
 
-## Status
+Required public configuration:
 
-Initial MVP build in progress.
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+
+No service-role key is required to run this release.
+
+## Verification
+
+```bash
+npm test
+npm run typecheck
+npm run lint
+npm run build
+npm audit --audit-level=high
+```
+
+See `docs/product-and-rules.md` for the active rules/product contract and `docs/plans/2026-08-30-epic-playable-v0.md` for the shipped vertical slice.

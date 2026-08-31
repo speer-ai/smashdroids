@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Smash Droids",
-  description: "Field an army of AI agents and battle your friends on the grid.",
+  description: "Command AI droid armies across a spherical hex world in sequential tactical turns.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
