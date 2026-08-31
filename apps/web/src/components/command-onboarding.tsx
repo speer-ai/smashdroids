@@ -23,7 +23,7 @@ export function CommandOnboarding({ defaultCallsign }: { defaultCallsign: string
     setSubmitting(true);
     setError("");
     try {
-      const profile = await completeOnboarding({ callsign, doctrine: "adaptive" });
+      const profile = await completeOnboarding({ callsign });
       localStorage.setItem("smashdroids:command-profile", JSON.stringify(profile));
       router.push("/play");
     } catch {

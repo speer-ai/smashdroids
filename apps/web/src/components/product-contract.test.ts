@@ -11,16 +11,22 @@ describe("Spherefall product contract", () => {
     const login = read("src/app/login/page.tsx");
     const onboarding = read("src/components/command-onboarding.tsx");
     expect(landing).toContain("PLAY NOW");
+    expect(landing).toContain("DETERMINISTIC SPHERICAL COMBAT");
+    expect(landing).toContain("stack up to four legal commands");
+    expect(landing).toContain("SPHEREFALL-OP1-V1 · ABI 2");
+    expect(landing).not.toMatch(/axial|three legal commands|ABI 1/i);
     expect(landing).toContain("/login?next=/onboarding");
     expect(login).toContain('"/onboarding"');
-    expect(onboarding).not.toMatch(/instinct|doctrine-fieldset|doctrine-grid/i);
+    const onboardingAction = read("src/app/onboarding/actions.ts");
+    expect(onboarding).not.toMatch(/instinct|doctrine/i);
+    expect(onboardingAction).not.toMatch(/instinct|doctrine/i);
     expect(onboarding).toContain("step {step + 1} of 2");
     expect(onboarding).toContain('aria-describedby="callsign-help"');
     expect(onboarding).toContain('role="status"');
     expect(onboarding).toContain("ROTATABLE GEODESIC WORLD");
     expect(onboarding).toContain("Stack up to four orders");
     expect(onboarding).toContain("/play");
-    expect(read("src/app/onboarding/actions.ts")).toContain('store.set("sd_onboarded_user", user.id');
+    expect(onboardingAction).toContain('store.set("sd_onboarded_user", user.id');
     expect(read("src/app/play/page.tsx")).toContain('store.get("sd_onboarded_user")?.value !== user.id');
   });
 

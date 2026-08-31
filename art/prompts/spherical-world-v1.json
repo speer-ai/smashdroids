@@ -16,56 +16,92 @@
     {
       "id": "neo-romans",
       "name": "Neo Romans",
-      "subtitle": "The Aureate Cohort",
-      "palette": ["#6E2532", "#E8DDC6", "#B78A42", "#292A2E", "#78E4E8"],
+      "subtitle": "Aureate Cohort",
+      "palette": [
+        "#6E2532",
+        "#E8DDC6",
+        "#B78A42",
+        "#292A2E",
+        "#78E4E8"
+      ],
       "emblem": "A freestanding semicircular arch intersected by two horizontal orbital lines and one central square.",
       "doctrine": "Formation control, overlapping shields, short-range counterattacks, deployable cover.",
-      "variationPrompt": "Neo Romans — The Aureate Cohort. Oxblood, warm ivory, brushed brass, basalt, and restrained cyan energy. Armor is built from arch-shaped shoulder plates, rectangular shield planes, architectural ribs, and interlocking masonry-like blocks. Forms are upright, stable, civic, and protective. Equipment emphasizes projected barriers, deployable cover, and formation links. Emblem: one semicircular arch crossed by two thin horizontal orbital lines with one central square. Avoid eagles, laurels, fasces, legionary equipment, historical helmets, Roman numerals, and Latin text."
+      "variationPrompt": "Neo Romans — Aureate Cohort. Oxblood, warm ivory, brushed brass, basalt, and restrained cyan energy. Armor is built from arch-shaped shoulder plates, rectangular shield planes, architectural ribs, and interlocking masonry-like blocks. Forms are upright, stable, civic, and protective. Equipment emphasizes projected barriers, deployable cover, and formation links. Emblem: one semicircular arch crossed by two thin horizontal orbital lines with one central square. Avoid eagles, laurels, fasces, legionary equipment, historical helmets, Roman numerals, and Latin text."
     },
     {
       "id": "germanoids",
       "name": "Germanoids",
-      "subtitle": "The Forgewood Union",
-      "palette": ["#34383B", "#234C43", "#B46F45", "#C7C1B4", "#B8E66A"],
+      "subtitle": "Forgewood Union",
+      "palette": [
+        "#34383B",
+        "#234C43",
+        "#B46F45",
+        "#C7C1B4",
+        "#B8E66A"
+      ],
       "emblem": "Three interlocking dovetail bars inside an open hexagonal frame.",
       "doctrine": "Modular upgrades, traps, repair chains, methodical ranged pressure.",
-      "variationPrompt": "Germanoids — The Forgewood Union. Graphite, deep pine, hammered copper, pale ash, and restrained lime energy. Use exposed braces, dovetail-shaped connections, modular armor panels, repairable mechanisms, and practical articulated tools. Forms are compact, durable, and workshop-built, with subtle structural rhythms inspired by timber joinery without copying a real building. Emblem: three interlocking dovetail bars inside an open hexagonal frame. Avoid eagles, crosses, runes, blackletter, lightning shapes, twentieth-century uniforms, and red-white-black schemes."
+      "variationPrompt": "Germanoids — Forgewood Union. Graphite, deep pine, hammered copper, pale ash, and restrained lime energy. Use exposed braces, dovetail-shaped connections, modular armor panels, repairable mechanisms, and practical articulated tools. Forms are compact, durable, and workshop-built, with subtle structural rhythms inspired by timber joinery without copying a real building. Emblem: three interlocking dovetail bars inside an open hexagonal frame. Avoid eagles, crosses, runes, blackletter, lightning shapes, twentieth-century uniforms, and red-white-black schemes."
     },
     {
       "id": "xiren",
       "name": "XiRen",
-      "subtitle": "The Celestial Weave",
-      "palette": ["#176B61", "#A9CDB8", "#202A2C", "#E7E4D5", "#F2B84B"],
+      "subtitle": "Celestial Weave",
+      "palette": [
+        "#176B61",
+        "#A9CDB8",
+        "#202A2C",
+        "#E7E4D5",
+        "#F2B84B"
+      ],
       "emblem": "A rounded square containing three circuit-cloud curves around an empty circular center.",
       "doctrine": "Redirection, decoys, linked movement, area denial, elegant ranged control.",
-      "variationPrompt": "XiRen — The Celestial Weave. Dark jade, celadon, ink black, porcelain, and restrained amber energy. Use balanced horizontal compositions, rounded-square armor, ceramic surfaces, deliberate negative space, segmented circuit-cloud curves, and floating relay elements. Forms communicate redirection, prediction, and linked movement. Emblem: a rounded square holding three continuous circuit-cloud curves around an empty circular center. Avoid dragons, copied calligraphy, stars, dynastic armor, state seals, flag compositions, pagoda costumes, and martial-arts caricature."
+      "variationPrompt": "XiRen — Celestial Weave. Dark jade, celadon, ink black, porcelain, and restrained amber energy. Use balanced horizontal compositions, rounded-square armor, ceramic surfaces, deliberate negative space, segmented circuit-cloud curves, and floating relay elements. Forms communicate redirection, prediction, and linked movement. Emblem: a rounded square holding three continuous circuit-cloud curves around an empty circular center. Avoid dragons, copied calligraphy, stars, dynastic armor, state seals, flag compositions, pagoda costumes, and martial-arts caricature."
     },
     {
       "id": "hoshikage",
       "name": "Hoshikage",
-      "subtitle": "The Folded Circuit",
-      "palette": ["#232A59", "#E9E3D5", "#3C8C88", "#25272A", "#FF725E"],
+      "subtitle": "Folded Circuit",
+      "palette": [
+        "#232A59",
+        "#E9E3D5",
+        "#3C8C88",
+        "#25272A",
+        "#FF725E"
+      ],
       "emblem": "Five folded rhombi interlocked around an irregular hollow pentagon.",
       "doctrine": "Transformation, flanking, burst movement, stance changes, precise attacks.",
-      "variationPrompt": "Hoshikage — The Folded Circuit. Midnight indigo, soft paper, oxidized teal, charcoal, and restrained coral energy. Use nested folding plates, visible precision hinges, compact transformed volumes, offset symmetry, diamond joints, and rectangular sensor vanes. Every chassis appears capable of changing stance or unfolding into another configuration. Emblem: five folded rhombi interlocked around an irregular hollow pentagon. Avoid rising-sun rays, chrysanthemum seals, torii, copied kanji, samurai armor, historical swords, and imperial imagery."
+      "variationPrompt": "Hoshikage — Folded Circuit. Midnight indigo, soft paper, oxidized teal, charcoal, and restrained coral energy. Use nested folding plates, visible precision hinges, compact transformed volumes, offset symmetry, diamond joints, and rectangular sensor vanes. Every chassis appears capable of changing stance or unfolding into another configuration. Emblem: five folded rhombi interlocked around an irregular hollow pentagon. Avoid rising-sun rays, chrysanthemum seals, torii, copied kanji, samurai armor, historical swords, and imperial imagery."
     },
     {
       "id": "solandinos",
       "name": "Solandinos",
-      "subtitle": "The Sunriver Concord",
-      "palette": ["#A84F35", "#2C9A9A", "#264B83", "#D6B878", "#F5D547"],
+      "subtitle": "Sunriver Concord",
+      "palette": [
+        "#A84F35",
+        "#2C9A9A",
+        "#264B83",
+        "#D6B878",
+        "#F5D547"
+      ],
       "emblem": "A stepped diamond divided by one continuous S-shaped river channel.",
       "doctrine": "Momentum, elevation bonuses, energy sharing, rapid redeployment, terrain adaptation.",
-      "variationPrompt": "Solandinos — The Sunriver Concord. Terracotta, river turquoise, deep ultramarine, sandstone, and restrained yellow energy. Use stepped armor terraces, strong diagonal color fields, branching energy conduits, high-clearance mobility systems, and forms adapted to dramatic changes in elevation. Combine highland solidity with flowing river-like cable paths. Emblem: a stepped diamond divided by one continuous S-shaped river channel. Avoid condors, sun faces, copied indigenous patterns, feathers, masks, ceremonial dress, sacred imagery, flags, and generic jungle-tribe aesthetics."
+      "variationPrompt": "Solandinos — Sunriver Concord. Terracotta, river turquoise, deep ultramarine, sandstone, and restrained yellow energy. Use stepped armor terraces, strong diagonal color fields, branching energy conduits, high-clearance mobility systems, and forms adapted to dramatic changes in elevation. Combine highland solidity with flowing river-like cable paths. Emblem: a stepped diamond divided by one continuous S-shaped river channel. Avoid condors, sun faces, copied indigenous patterns, feathers, masks, ceremonial dress, sacred imagery, flags, and generic jungle-tribe aesthetics."
     },
     {
       "id": "zoryani",
       "name": "Zoryani",
-      "subtitle": "The Aurora Foundry",
-      "palette": ["#182B49", "#B8C6CB", "#E49B3D", "#685D91", "#7DF2E4"],
+      "subtitle": "Aurora Foundry",
+      "palette": [
+        "#182B49",
+        "#B8C6CB",
+        "#E49B3D",
+        "#685D91",
+        "#7DF2E4"
+      ],
       "emblem": "Three offset aurora arcs enclosing a faceted vertical lozenge.",
       "doctrine": "Attrition, stored-energy retaliation, heat zones, armor regeneration, slow advance.",
-      "variationPrompt": "Zoryani — The Aurora Foundry. Midnight blue, frost gray, forge amber, cold violet, and restrained ice-cyan energy. Use insulated rounded outer hulls, angular crystalline energy cores, thermal shutters, heat-exchange fins, broad stabilizing feet, and luminous aurora-like arcs. Forms are resilient, communal, and built for long darkness and extreme cold. Emblem: three offset aurora arcs enclosing one faceted vertical lozenge. Avoid red stars, hammer-and-sickle shapes, double-headed eagles, medals, military greatcoats, propaganda styling, onion-dome costumes, and flag tricolors."
+      "variationPrompt": "Zoryani — Aurora Foundry. Midnight blue, frost gray, forge amber, cold violet, and restrained ice-cyan energy. Use insulated rounded outer hulls, angular crystalline energy cores, thermal shutters, heat-exchange fins, broad stabilizing feet, and luminous aurora-like arcs. Forms are resilient, communal, and built for long darkness and extreme cold. Emblem: three offset aurora arcs enclosing one faceted vertical lozenge. Avoid red stars, hammer-and-sickle shapes, double-headed eagles, medals, military greatcoats, propaganda styling, onion-dome costumes, and flag tricolors."
     }
   ]
 }
