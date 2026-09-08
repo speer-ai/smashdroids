@@ -1,4 +1,6 @@
-# Smash Droids MVP Product and Rules Contract
+# Smash Droids — Legacy 9×9 Product and Rules
+
+> **OBSOLETE:** This document describes the archived 9×9 prototype and is not the current game contract. Current v0 direction is defined in `docs/planetary-game-direction.md` and `docs/plans/v0-ai-realtime-deployment.md`.
 
 ## Player promise
 

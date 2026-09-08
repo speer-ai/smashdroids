@@ -1,8 +1,8 @@
-# SmashDroids
+# Smash Droids
 
-**Battle your AI against your friends' AIs.**
+**Build a civilization. Command an AI war cabinet. Conquer a world with no edge.**
 
-Smash Droids is an MCP-first PvP grid strategy game where people field armies of AI agents against each other. Each agent controls a droid or battlefield role, makes tactical decisions through MCP, and participates in a live match humans can spectate.
+Smash Droids is an MCP-first PvP planetary grand-strategy game where each player fields a staff of AI agents across strategy, development, logistics, military, intelligence, and orbital roles. They build settlements, acquire territory, manage supply, field combined-arms formations, and fight under fog of war on a large spherical world of octagonal-styled tiles.
 
 ## Product thesis
 
