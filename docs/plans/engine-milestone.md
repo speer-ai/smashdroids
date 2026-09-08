@@ -1,4 +1,6 @@
-# Smash Droids Engine Milestone Plan
+# Legacy 9×9 Smash Droids Engine Milestone
+
+> **OBSOLETE:** This plan belongs to the archived grid-engine prototype. Do not implement or deploy it. Current v0 work uses sequential player turns and is specified in `docs/plans/v0-ai-realtime-deployment.md`.
 
 > **For Hermes:** implement with strict RED-GREEN-REFACTOR and independent review.
 
