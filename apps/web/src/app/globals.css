@@ -7,3 +7,35 @@
 @media(max-width:780px){.clan-grid{grid-template-columns:1fr 1fr}.clan-card{min-height:300px}.spherefall-status{grid-template-columns:1fr 1fr;height:auto;padding:10px}.spherefall-status>div{min-height:44px;justify-content:center}.spherefall-status>div:first-child,.spherefall-status>div:last-child{display:none}.spherefall-status .spherefall-versus{position:absolute;left:50%;height:44px;border:0;transform:translateX(-50%)}.spherefall-layout{display:flex;flex-direction:column;min-height:0}.faction-panel{display:none}.globe-stage{min-height:min(100vw,620px);order:1}.spherefall-globe{width:min(100%,620px)}.command-panel{order:2;border:0;border-top:1px solid var(--line);min-height:300px}.unit-readout{display:grid;grid-template-columns:130px 1fr;gap:0 15px}.unit-readout>img{grid-row:1/5;height:145px}.command-actions{grid-template-columns:repeat(3,1fr)}.reinforcement-dock>div{grid-template-columns:repeat(3,1fr)}.command-queue{grid-template-columns:1fr}.execute-button{min-height:56px;border-left:0;border-top:1px solid var(--line)}.queue-list{min-height:64px}.globe-controls{bottom:8px}}
 @media(max-width:520px){.clan-draft{padding:28px 14px}.clan-grid{grid-template-columns:1fr}.clan-card{min-height:330px}.spherefall-status>div{padding:5px}.spherefall-status strong{font-size:9px}.globe-stage{min-height:100vw}.command-panel{padding:22px 14px}.unit-readout{grid-template-columns:105px 1fr}.unit-readout>img{height:120px}.reinforcement-dock>div{grid-template-columns:repeat(2,1fr)}.queue-list{padding-inline:10px}.event-strip{padding-inline:10px}}
 @media (prefers-reduced-motion: reduce){.clan-card>img,.sphere-tile path{transition:none}.clan-card:hover>img,.clan-card:focus-visible>img{transform:none}}
+/* Recovered deterministic world artifact viewer (/world) */
+.world-shell{min-height:100vh;background:var(--void)}
+.world-section{padding:clamp(28px,4vw,64px)}
+.world-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.world-heading h2{margin:10px 0 0;font-size:clamp(34px,5vw,62px);line-height:.95;letter-spacing:-.045em;text-transform:uppercase}
+.world-heading>p{text-align:right;color:var(--muted);font:11px/1.7 var(--mono);letter-spacing:.09em}
+.world-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(290px,1fr);border:1px solid var(--line);background:rgba(5,9,7,.88)}
+.globe-shell{position:relative;min-width:0;border-right:1px solid var(--line);background:radial-gradient(circle,#12372f 0,#091511 47%,#030504 78%)}
+.globe-host{height:min(68vw,740px);min-height:520px;touch-action:none}
+.globe-canvas{width:100%;height:100%;display:block;cursor:grab}
+.globe-canvas:active{cursor:grabbing}
+.globe-canvas:focus-visible{outline:2px solid var(--acid);outline-offset:-4px}
+.globe-status{position:absolute;left:20px;bottom:16px;max-width:calc(100% - 40px);margin:0;color:#aab8ae;background:rgba(3,5,4,.72);padding:8px 10px;font:10px/1.4 var(--mono);letter-spacing:.06em}
+.globe-fallback{color:var(--muted);font:12px/1.6 var(--mono)}
+.world-panel{padding:34px;display:flex;flex-direction:column}
+.world-panel>strong{margin:10px 0 14px;font-size:27px;letter-spacing:-.035em}
+.world-panel>p{color:#aab8ae;font-size:14px;line-height:1.6}
+.panel-label{color:var(--acid);font:700 11px var(--mono);letter-spacing:.17em}
+.metrics{display:grid;grid-template-columns:1fr 1fr;margin:20px 0 28px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.metrics div{padding:14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metrics dt{color:var(--muted);font:9px var(--mono);letter-spacing:.14em}
+.metrics dd{margin:7px 0 0;color:var(--acid2);font:700 16px var(--mono)}
+.legend{margin-top:auto}
+.legend h3{color:var(--muted);font:700 10px var(--mono);letter-spacing:.15em}
+.legend ul{display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;padding:0;margin:16px 0 24px;list-style:none}
+.legend li{display:flex;align-items:center;gap:9px;color:#c5cec5;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.swatch{width:10px;height:10px;border-radius:1px;background:#456}
+.swatch.ocean{background:#073047}.swatch.coast{background:#1f7a85}.swatch.plains{background:#7a943f}.swatch.forest{background:#145736}.swatch.desert{background:#ab7533}.swatch.tundra{background:#a8bdbf}.swatch.mountain{background:#595c61}.swatch.wetland{background:#29705a}.swatch.urban{background:var(--acid);box-shadow:0 0 7px var(--acid)}
+.topology-note{border-top:1px solid var(--line);padding-top:17px;color:#87948a!important;font:10px/1.6 var(--mono)!important}
+.topology-note b{color:#b8c6ba}
+@media(max-width:850px){.world-heading{align-items:flex-start;flex-direction:column}.world-heading>p{text-align:left}.world-layout{grid-template-columns:1fr}.globe-shell{border-right:0;border-bottom:1px solid var(--line)}.globe-host{height:70vw;min-height:390px}.world-panel{min-height:530px}}
+@media(max-width:560px){.world-section{padding:28px 14px}.globe-host{height:92vw;min-height:330px}.world-panel{padding:25px}}
