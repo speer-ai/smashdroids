@@ -53,12 +53,29 @@ No service-role key is required to run this release.
 
 ## Verification
 
+Every command below fans out to all workspaces (`apps/*`, `packages/*`):
+
 ```bash
 npm test
 npm run typecheck
 npm run lint
 npm run build
-npm audit --audit-level=high
+npm audit --omit=dev --audit-level=high
+```
+
+The same gate runs automatically on every pull request and on pushes to `main`
+via `.github/workflows/verify.yml` (Node 22, `npm ci`, then typecheck, lint,
+test, and build in sequence). A failing step fails the check and blocks merge.
+The workflow never deploys.
+
+To run the merge gate locally exactly as CI does:
+
+```bash
+npm ci --no-audit --no-fund \
+  && npm run typecheck --workspaces --if-present \
+  && npm run lint --workspaces --if-present \
+  && npm test --workspaces --if-present \
+  && npm run build --workspaces --if-present
 ```
 
 See `docs/product-and-rules.md` for the active rules/product contract and `docs/plans/2026-08-30-spherical-world-v1.md` for the implementation plan.
